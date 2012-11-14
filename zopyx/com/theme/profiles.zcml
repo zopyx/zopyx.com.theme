@@ -1,21 +1,21 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="zopyx.theme">
+    i18n_domain="zopyx.com.theme">
 
   <genericsetup:registerProfile
       name="default"
-      title="zopyx_com"
+      title="zopyx.com.theme"
       directory="profiles/default"
       description='Extension profile for the "zopyx_com" Plone theme.'
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
   <genericsetup:importStep
-      name="zopyx.theme.various"
+      name="zopyx.com.theme.various"
       title="zopyx_com: miscellaneous import steps"
       description="Various import steps that are not handled by GS import/export handlers."
-      handler="zopyx.theme.setuphandlers.setupVarious">
+      handler="zopyx.com.theme.setuphandlers.setupVarious">
     <depends name="skins"/>
   </genericsetup:importStep>
 
