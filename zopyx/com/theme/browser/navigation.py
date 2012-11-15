@@ -63,3 +63,6 @@ class Navigation(BrowserView):
             refs.append(brain.getObject())
         return list(chunks(refs, chunk_size))
 
+    def isNavigationRoot(self):
+
+        return self.context == self.navroot
