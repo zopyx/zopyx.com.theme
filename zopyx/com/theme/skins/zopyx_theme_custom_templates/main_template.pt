@@ -171,37 +171,22 @@
 
                     <div class="span4">                      
                         <div class="row-fluid">
-        <!-- ----------------------------------- /Nachrichten -->
-                          <div class="mainnews">
+
+                        <div class="mainnews">
                             <h3>News</h3>
                             <ul class="news-list">
-                              <li>
+                                <li tal:repeat="item context/@@getNews">
                                   <div class="news-icon"><div class="img"><i class="icon-user"></i></div></div>
-                              
                                   <div class="news-text">
-                                  
-                                  <h6><a href="">Monitoring-Plattform für die Gasbeschaffung geht online</a></h6>
-                                  <font size="1"><a href="#">Read More</a></font>
-                                  
-                                  <p class="pull-right"><em><i class="icon-map-marker"></i>09.11.2012</em></p>
+                                      <h6><a tal:attributes="href item/url" tal:content="item/description" /></h6>
+                                      <font size="1"><a tal:attributes="href item/url">Read More</a></font>
+                                      <p class="pull-right"><em><i class="icon-map-marker"></i><span tal:replace="item/created"/></em></p>
                                 </div>
                                 <hr>
                               </li>
-                             
-                              <li>
-                                  <div class="news-icon"><div class="img"><i class="icon-user"></i></div></div>
-                              
-                                  <div class="news-text">
-                                  
-                                  <h6><a href="">Vortrag von Andreas Jung zum Thema "PDF Generierung auf der PyconDE 2012</a></h6>
-                                  <font size="1"><a href="#">Read More</a></font>
-                                  
-                                  <p class="pull-right"><em><i class="icon-map-marker"></i>09.11.2012</em></p>
-                                </div>
-                              </li>
                             </ul>
                           </div>
-        <!-- ----------------------------------- /Termine -->
+
                           <div class="mainnews">
                             <h3>Termine</h3>
                             <ul class="news-list">

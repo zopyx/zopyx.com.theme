@@ -35,5 +35,13 @@
     permission="zope2.View"
   />
 
+  <browser:page 
+    for="*"
+    name="getNews"
+    class=".navigation.Navigation"
+    attribute="getNews"
+    permission="zope2.View"
+  />
+
 
 </configure>

@@ -4,14 +4,17 @@ from plone.app.layout.navigation.root import getNavigationRootObject
 
 class Navigation(BrowserView):
 
+    @property
+    def navroot(self):        
+        portal = getToolByName(self.context, 'portal_url')
+        return getNavigationRootObject(self.context, portal)
+        
+
     def getNavigation(self):
         """ Return data structure for rendering the main menu """
 
-        portal = getToolByName(self.context, 'portal_url')
-        navroot = getNavigationRootObject(self.context, portal)
-
         entries = list()
-        folders = navroot.getFolderContents(full_objects=True)
+        folders = self.navroot.getFolderContents(full_objects=True)
         folders = [f for f in folders if not f.getExcludeFromNav()]
         
         for folder in folders:
@@ -25,4 +28,22 @@ class Navigation(BrowserView):
                                 url=folder.absolute_url(),
                                 children=children))
 
-        return entries                                                                              
+        return entries                                                                             
+
+
+    def getNews(self, num_items=3):
+
+        catalog = getToolByName(self.context, 'portal_catalog')
+        brains = catalog(portal_type=('News Item',),
+                         sort_on='created',
+                         sort_order='descending')
+        results = list()
+        for brain in brains:
+            if 'BlogItem' in brain.Subject:
+                continue
+            results.append(dict(created=brain.created.strftime('%d.%m.%Y'),
+                                url=brain.getURL(),
+                                description=brain.Description,
+                                title=brain.Title,
+                            ))
+        return results[:num_items]
