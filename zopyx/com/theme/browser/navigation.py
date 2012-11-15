@@ -16,11 +16,15 @@ class Navigation(BrowserView):
         return getNavigationRootObject(self.context, portal)
         
 
+    @property
+    def catalog(self):
+        return getToolByName(self.context, 'portal_catalog')
+
     def getNavigation(self):
         """ Return data structure for rendering the main menu """
 
         entries = list()
-        folders = self.navroot.getFolderContents(full_objects=True)
+        folders = self.navroot.getFolderContents({'is_folderish' : True}, full_objects=True)
         folders = [f for f in folders if not f.getExcludeFromNav()]
         
         for folder in folders:
@@ -39,8 +43,7 @@ class Navigation(BrowserView):
 
     def getNews(self, num_items=3):
 
-        catalog = getToolByName(self.context, 'portal_catalog')
-        brains = catalog(portal_type=('News Item',),
+        brains = self.catalog(portal_type=('News Item',),
                          sort_on='created',
                          sort_order='descending')
         results = list()
@@ -56,13 +59,18 @@ class Navigation(BrowserView):
 
     def getProjectReferences(self, chunk_size=4):
 
-        catalog = getToolByName(self.context, 'portal_catalog')
-        brains = catalog(portal_type='zopyx.policy.projectreference')
+        brains = self.catalog(portal_type='zopyx.policy.projectreference')
         refs = list()
         for brain in brains:
             refs.append(brain.getObject())
         return list(chunks(refs, chunk_size))
+    
+    def getRotatorImages(self, chunk_size=4):
+        brains = self.catalog(portal_type='zopyx.policy.rotatorimage')
+        images = list()
+        for brain in brains:
+            images.append(brain.getObject())
+        return images
 
     def isNavigationRoot(self):
-
         return self.context == self.navroot

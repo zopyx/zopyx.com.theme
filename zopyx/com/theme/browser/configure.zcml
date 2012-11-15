@@ -57,5 +57,12 @@
     attribute="isNavigationRoot"
     permission="zope2.View"
   />
+  <browser:page 
+    for="*"
+    name="getRotatorImages"
+    class=".navigation.Navigation"
+    attribute="getRotatorImages"
+    permission="zope2.View"
+  />
  
 </configure>

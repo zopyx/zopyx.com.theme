@@ -88,24 +88,21 @@
             <div id="myCarousel" class="carousel slide">
               <!-- Carousel items -->
               <div class="carousel-inner">
-                <div class="item zopyx-slide">
-                  <h2>E-Publishing</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                      <a href="#" class="keyvisual-link">Read more</a>
-                        <div class="keyvisual-img"><img src="assets/img/web-wh.png" alt="image01" /></div>
-                </div>
-                <div class="active item zopyx-slide">
-                  <h2>Web-to-Print</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                      <a href="#" class="keyvisual-link">Read more</a>
-                        <div class="keyvisual-img"><img src="assets/img/ipad_gas.png" alt="image01" /></div>
-                </div>
-                <div class="item zopyx-slide">
-                  <h2>Individuelle Lösungen</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ut labore et dolore magna aliqua.</p>
-                      <a href="#" class="keyvisual-link">Read more</a>
-                        <div class="keyvisual-img"><img src="assets/img/ipad-software.png" alt="image01" /></div>
-                </div>
+                  <tal:def define="images context/@@getRotatorImages">
+                  <div tal:repeat="img images"
+                       tal:attributes="class python: 'item zopyx-slide ' + (repeat['img'].start and 'active' or '')">
+                       <h2 tal:content="img/Title"/>
+                       <p tal:content="img/Description"/>
+                       <a tal:attributes="href img/target" class="keyvisual-link">Read more</a>
+                       <div class="keyvisual-img">
+                           <img tal:define="scale img/@@images"
+                                tal:replace="structure python: scale.scale('image', width=360, height=230).tag()" 
+                            />
+                       </div>
+                  </div>
+
+                  </tal:def>
+                  
               </div>
               <!-- Carousel nav -->
               <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
