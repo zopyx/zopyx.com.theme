@@ -2,6 +2,12 @@ from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
 from plone.app.layout.navigation.root import getNavigationRootObject
 
+
+def chunks(l, n):
+    """ Yield successive n-sized chunks from l.  """
+    for i in xrange(0, len(l), n):
+        yield l[i:i+n]
+
 class Navigation(BrowserView):
 
     @property
@@ -47,3 +53,13 @@ class Navigation(BrowserView):
                                 title=brain.Title,
                             ))
         return results[:num_items]
+
+    def getProjectReferences(self, chunk_size=4):
+
+        catalog = getToolByName(self.context, 'portal_catalog')
+        brains = catalog(portal_type='zopyx.policy.projectreference')
+        refs = list()
+        for brain in brains:
+            refs.append(brain.getObject())
+        return list(chunks(refs, chunk_size))
+

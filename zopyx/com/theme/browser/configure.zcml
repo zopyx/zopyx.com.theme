@@ -43,5 +43,12 @@
     permission="zope2.View"
   />
 
-
+  <browser:page 
+    for="*"
+    name="getProjectReferences"
+    class=".navigation.Navigation"
+    attribute="getProjectReferences"
+    permission="zope2.View"
+  />
+ 
 </configure>

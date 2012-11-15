@@ -264,7 +264,6 @@
               </li>
             </ul>
           </div-->
-        <!-- ----------------------------------- /Referenz Bilder Carousel-->
 
         <div class="row-fluid" id="ref-slider">
           <div class="span12 welcome-image">
@@ -272,32 +271,19 @@
                 <h1>Referenzen <small>und Kundenstimmen</small></h1>
               </div>
             <div id="myCarousel2" class="carousel slide">
-              <!-- Carousel items -->
               <div class="carousel-inner">
-                <div class="item active">
-                  <a href="#"><img class="thumbnail ref-images" src="assets/img/dgho.png"> </a>
-                  <a href="#"><img class="thumbnail ref-images" src="assets/img/vik.png"> </a>
-                  <a href="#"><img class="thumbnail ref-images" src="assets/img/haufe.png"> </a>
-                  <a href="#"><img class="thumbnail ref-images" src="assets/img/weishaupt.png"> </a>
-                </div>
-                <div class="item">
-                  <a href="#"><img class="ref-images" src="assets/img/dgho.png"> </a>
-                  <a href="#"><img class="ref-images" src="assets/img/vik.png"> </a>
-                  <a href="#"><img class="ref-images" src="assets/img/haufe.png"> </a>
-                  <a href="#"><img class="ref-images" src="assets/img/weishaupt.png"> </a>
-                </div>
-                <div class="item">
-                  <a href="#"><img class="ref-images" src="assets/img/dgho.png"> </a>
-                  <a href="#"><img class="ref-images" src="assets/img/vik.png"> </a>
-                  <a href="#"><img class="ref-images" src="assets/img/haufe.png"> </a>
-                  <a href="#"><img class="ref-images" src="assets/img/weishaupt.png"> </a>
+                  <div tal:repeat="chunk context/getProjectReferences"
+                    tal:attributes="class python: 'item ' + (repeat['chunk'].start and 'active' or '')">
+                    <a tal:repeat="ref chunk"
+                       tal:attributes="href ref/absolute_url">
+                        <img tal:define="scale ref/@@images"
+                             tal:replace="structure python: scale.scale('image', width=260, height=130).tag() "/>
+                    </a>
                 </div>
               </div>
-              <!-- Carousel nav -->
               <a class="carousel-control left" href="#myCarousel2" data-slide="prev">&lsaquo;</a>
               <a class="carousel-control right" href="#myCarousel2" data-slide="next">&rsaquo;</a>
             </div>
-         
           </div>
         </div>
 
