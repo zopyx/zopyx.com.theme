@@ -10,7 +10,7 @@
        persistence'.
        -->
 <object name="portal_skins" allow_any="False" cookie_persistence="False"
-   default_skin="zopyx_com">
+   default_skin="zopyx.com">
 
  <!-- This list registers the folders that are stored in the skins directory
       of your product (on the filesystem) as Filesystem Directory Views within
@@ -18,13 +18,13 @@
       -->
  <object name="zopyx_theme_custom_images"
     meta_type="Filesystem Directory View"
-    directory="zopyx.theme:skins/zopyx_theme_custom_images"/>
+    directory="zopyx.com.theme:skins/zopyx_theme_custom_images"/>
  <object name="zopyx_theme_custom_templates"
     meta_type="Filesystem Directory View"
-    directory="zopyx.theme:skins/zopyx_theme_custom_templates"/>
+    directory="zopyx.com.theme:skins/zopyx_theme_custom_templates"/>
  <object name="zopyx_theme_styles"
     meta_type="Filesystem Directory View"
-    directory="zopyx.theme:skins/zopyx_theme_styles"/>
+    directory="zopyx.com.theme:skins/zopyx_theme_styles"/>
 
  <!-- A skin-path in this file corresponds to a Skin Selection in the
      'Properties' tab of the portal_skins tool, in the ZMI.
@@ -38,7 +38,7 @@
        Note: insert-before (and -after) accepts the value "*" which means
        "all".
        -->
- <skin-path name="zopyx_com" based-on="Plone Default">
+ <skin-path name="zopyx.com" based-on="Plone Default">
   <layer name="zopyx_theme_custom_images"
      insert-after="custom"/>
   <layer name="zopyx_theme_custom_templates"
