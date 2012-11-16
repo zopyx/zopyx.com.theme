@@ -28,11 +28,12 @@ class Navigation(BrowserView):
         folders = [f for f in folders if not f.getExcludeFromNav()]
         
         for folder in folders:
-
             children = list()
-            for brain in folder.getFolderContents():
-                children.append(dict(title=brain.Title,
-                                     url=brain.getURL()))
+            exclude_subcontent = folder.getField('excludeSubcontentFromNavigation').get(folder)
+            if not exclude_subcontent:
+                for brain in folder.getFolderContents():
+                    children.append(dict(title=brain.Title,
+                                         url=brain.getURL()))
 
             entries.append(dict(title=folder.Title(),
                                 url=folder.absolute_url(),

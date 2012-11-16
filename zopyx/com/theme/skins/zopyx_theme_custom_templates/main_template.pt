@@ -41,6 +41,11 @@
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 
     <!-- third party CSS -->
+    <link rel="stylesheet" type="text/css" tal:attributes="href string:$portal_url/filters/default.css" />
+
+    <!-- Plone compatibility -->
+    <metal:slot define-slot="style_slot">
+    </metal:slot>
   </head>
 
   <body>
@@ -62,13 +67,13 @@
                  <li class="dropdown" 
                      tal:repeat="item context/getNavigation">
                      <a class="dropdown-toggle" 
-                         data-toggle="dropdown" 
-                         style="" 
-                         tal:attributes="href item/url">
+                         data-toggle="" 
+                         tal:attributes="href item/url; 
+                                         data-toggle python: len(item['children']) >0 and 'dropdown' or ''">
                          <span tal:replace="item/title"/>
                          <b tal:condition="item/children" class="caret"></b>
                      </a>
-                     <ul class="dropdown-menu">
+                     <ul class="dropdown-menu" tal:condition="item/children">
                           <li tal:repeat="subitem item/children">
                               <a tal:attributes="href subitem/url" 
                                  tal:content="subitem/title"
@@ -394,12 +399,21 @@
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
 
+    <script src="http://cdn.jquerytools.org/1.2.7/all/jquery.tools.min.js"></script>
+
 
     <!-- third party JS -->
+    <script type="text/javascript" tal:attributes="src string:$portal_url/filters/filters.js"></script>
+    <script type="text/javascript" tal:attributes="src string:$portal_url/filters/jquery.easing.js"></script>
+    <script type="text/javascript" tal:attributes="src string:$portal_url/filters/init.js"></script>
+
 
     <script type="text/javascript">
         $('.carousel').carousel();
     </script>
+
+    <metal:slot define-slot="javascript_head_slot">
+    </metal:slot>
 
   </body>
 </html>
