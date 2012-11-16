@@ -31,7 +31,7 @@ class Navigation(BrowserView):
             children = list()
             exclude_subcontent = folder.getField('excludeSubcontentFromNavigation').get(folder)
             if not exclude_subcontent:
-                for brain in folder.getFolderContents():
+                for brain in folder.getFolderContents({'portal_type' : ('Folder', 'zopyx.policy.page')}):
                     children.append(dict(title=brain.Title,
                                          url=brain.getURL()))
 
