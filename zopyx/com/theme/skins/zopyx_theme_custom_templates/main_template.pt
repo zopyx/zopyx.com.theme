@@ -406,10 +406,12 @@
     <script type="text/javascript" tal:attributes="src string:$portal_url/filters/filters.js"></script>
     <script type="text/javascript" tal:attributes="src string:$portal_url/filters/jquery.easing.js"></script>
     <script type="text/javascript" tal:attributes="src string:$portal_url/filters/init.js"></script>
+    <script type="text/javascript" tal:attributes="src string:$portal_url/readmore/jquery.readmore.min.js"></script>
 
 
     <script type="text/javascript">
         $('.carousel').carousel();
+        $('.readmore').readmore();
     </script>
 
     <metal:slot define-slot="javascript_head_slot">
