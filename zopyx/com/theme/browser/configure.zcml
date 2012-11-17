@@ -64,5 +64,13 @@
     attribute="getRotatorImages"
     permission="zope2.View"
   />
+
+  <browser:page 
+    for="*"
+    name="getRandomTestimonial"
+    class=".navigation.Navigation"
+    attribute="getRandomTestimonial"
+    permission="zope2.View"
+  />
  
 </configure>

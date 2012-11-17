@@ -1,3 +1,5 @@
+import random
+
 from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
 from plone.app.layout.navigation.root import getNavigationRootObject
@@ -75,3 +77,12 @@ class Navigation(BrowserView):
 
     def isNavigationRoot(self):
         return self.context == self.navroot
+
+
+    def getRandomTestimonial(self):
+        brains = self.catalog({'portal_type' : 'zopyx.policy.customertestimonial',
+                               'path' : '/'.join(self.navroot.getPhysicalPath())})
+        if brains:
+            brain = random.choice(brains)
+            return brain.getObject()
+        return None
