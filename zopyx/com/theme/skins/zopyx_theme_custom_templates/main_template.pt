@@ -385,29 +385,13 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap-transition.js"></script>
-    <script src="assets/js/bootstrap-alert.js"></script>
-    <script src="assets/js/bootstrap-modal.js"></script>
-    <script src="assets/js/bootstrap-dropdown.js"></script>
-    <script src="assets/js/bootstrap-scrollspy.js"></script>
-    <script src="assets/js/bootstrap-tab.js"></script>
-    <script src="assets/js/bootstrap-tooltip.js"></script>
-    <script src="assets/js/bootstrap-popover.js"></script>
-    <script src="assets/js/bootstrap-button.js"></script>
-    <script src="assets/js/bootstrap-collapse.js"></script>
-    <script src="assets/js/bootstrap-carousel.js"></script>
-    <script src="assets/js/bootstrap-typeahead.js"></script>
-
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script src="http://cdn.jquerytools.org/1.2.7/all/jquery.tools.min.js"></script>
 
-
     <!-- third party JS -->
-    <script type="text/javascript" tal:attributes="src string:$portal_url/filters/filters.js"></script>
-    <script type="text/javascript" tal:attributes="src string:$portal_url/filters/jquery.easing.js"></script>
-    <script type="text/javascript" tal:attributes="src string:$portal_url/filters/init.js"></script>
     <script type="text/javascript" tal:attributes="src string:$portal_url/readmore/jquery.readmore.min.js"></script>
-
+    <script type="text/javascript" tal:attributes="src string:$portal_url/isotope/jquery.isotope.js"></script>
 
     <script type="text/javascript">
         $('.carousel').carousel();
