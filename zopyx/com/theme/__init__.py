@@ -8,5 +8,7 @@ from Products.CMFCore.DirectoryView import registerFileExtension
 from Products.CMFCore.FSFile import FSFile
 
 registerFileExtension('svg', FSFile)
-registerFileExtension('svg', FSFile)
 registerFileExtension('ttf', FSFile)
+registerFileExtension('less', FSFile)
+registerFileExtension('woff', FSFile)
+registerFileExtension('svg', FSFile)
