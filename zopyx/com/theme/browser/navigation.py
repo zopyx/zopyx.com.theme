@@ -79,6 +79,8 @@ class Navigation(BrowserView):
         return images
 
     def isNavigationRoot(self):
+        if '/search' in self.request.URL:
+            return False
         return self.context == self.navroot
 
 
