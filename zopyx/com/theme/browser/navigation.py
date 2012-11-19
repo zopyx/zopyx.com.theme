@@ -32,10 +32,13 @@ class Navigation(BrowserView):
         for folder in folders:
             children = list()
             exclude_subcontent = folder.getField('excludeSubcontentFromNavigation').get(folder)
+            use_vertical = folder.getField('useVerticalNavigation').get(folder)
             if not exclude_subcontent:
                 for brain in folder.getFolderContents({'portal_type' : ('Folder', 'zopyx.policy.page')}):
-                    children.append(dict(title=brain.Title,
-                                         url=brain.getURL()))
+                    url = brain.getURL()
+                    if use_vertical:
+                        url = '%s/foldervertical_view#%s' % (folder.absolute_url(), brain.getId)
+                    children.append(dict(title=brain.Title, url=url))
 
             entries.append(dict(title=folder.Title(),
                                 url=folder.absolute_url(),
