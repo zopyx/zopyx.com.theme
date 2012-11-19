@@ -25,12 +25,14 @@ setup(name='zopyx.com.theme',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'fanstatic',
           'z3c.jbot',
+          'plone.transformchain'
           # -*- Extra requirements: -*-
       ],
       entry_points="""
-      # -*- Entry points: -*-
-
+      [fanstatic.libraries]
+      theme = zopyx.com.theme:theme_library
       [z3c.autoinclude.plugin]
       target = plone
       """,

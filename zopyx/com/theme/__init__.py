@@ -12,3 +12,9 @@ registerFileExtension('ttf', FSFile)
 registerFileExtension('less', FSFile)
 registerFileExtension('woff', FSFile)
 registerFileExtension('svg', FSFile)
+
+
+from fanstatic import Library, Resource
+
+theme_library = Library('theme', 'theme_resources')
+body = Resource(theme_library, 'body.css')
