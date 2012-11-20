@@ -239,7 +239,7 @@
                             </ul>
                           </div>
 
-                          <div class="mainnews">
+                          <div class="mainnews" tal:condition="nothing">
                             <h3>Termine</h3>
                             <ul class="news-list">
                               <li>
