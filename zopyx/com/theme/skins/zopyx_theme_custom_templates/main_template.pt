@@ -195,24 +195,32 @@
                 <div class="span12">
                   <div class="row-fluid welcome-main">
 
-                    <div class="span4" tal:define="slot python: slots[0]">
-                        <h3><i tal:attributes="class slot/iconClass" style="padding-right:12px;"></i><span tal:replace="slot/Title"/></h3>
-                        <div class="row-fluid"> 
-                          <div class="span10">
-                            <div tal:content="structure slot/text/output" />
-                          </div>
+                    <tal:if condition="python: len(slots) > 0"> 
+                        <div class="span4" tal:define="slot python: slots[0]">
+                            <h3><i tal:attributes="class slot/iconClass" style="padding-right:12px;"></i><span tal:replace="slot/Title"/></h3>
+                            <div class="row-fluid"> 
+                              <div class="span10">
+                                <div tal:content="structure slot/text/output" />
+                              </div>
+                            </div>
                         </div>
-                    </div>
+                    </tal:if>
           
-                    <div class="span4" tal:define="slot python: slots[0]">
-                        <h3><i tal:attributes="class slot/iconClass" style="padding-right:12px;"></i><span tal:replace="slot/Title"/></h3>
-                        <div class="row-fluid"> 
-                          <div class="span10">
-                            <div tal:content="structure slot/text/output" />
-                          </div>
+                    <tal:if condition="python: len(slots) == 2"> 
+                        <div class="span4" tal:define="slot python: slots[1]">
+                            <h3><i tal:attributes="class slot/iconClass" style="padding-right:12px;"></i><span tal:replace="slot/Title"/></h3>
+                            <div class="row-fluid"> 
+                              <div class="span10">
+                                <div tal:content="structure slot/text/output" />
+                              </div>
+                            </div>
                         </div>
-                    </div>
+                    </tal:if>
 
+                    <tal:if condition="python: len(slots) == 1"> 
+                        <div class="span4">&nbsp;</div>
+                    </tal:if>
+                    
                     <div class="span4">                      
                         <div class="row-fluid">
 
