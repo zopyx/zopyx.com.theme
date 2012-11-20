@@ -91,3 +91,17 @@ class Navigation(BrowserView):
             brain = random.choice(brains)
             return brain.getObject()
         return None
+
+    def getFrontpageSlots(self):
+        return self.context.getFolderContents({'portal_type' : 'zopyx.policy.frontpageslot'}, full_objects=True)[:2]
+
+
+    def getBreadcrumbs(self):
+        from zope.component import getMultiAdapter
+        breadcrumbs_view = getMultiAdapter((self.context, self.request),
+                                           name='breadcrumbs_view')
+        result = breadcrumbs_view.breadcrumbs()
+        return result
+
+    def getNavigationRoot(self):
+        return self.navroot

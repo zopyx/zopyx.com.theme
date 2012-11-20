@@ -2,6 +2,7 @@
 <metal:define define-macro="master">
     <html lang="en" 
         tal:define="portal_url context/@@plone_portal_state/portal_url;
+                    navRoot context/getNavigationRoot;
                     nav_root_url context/@@plone_portal_state/navigation_root_url;
                     isNavRoot context/@@isNavigationRoot">
   <head>
@@ -46,7 +47,7 @@
     </metal:slot>
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target=".sidebar-nav">
 
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
@@ -82,6 +83,20 @@
               </ul>
           </div>
         </div>
+      <div tal:condition="nothing" class="" style="border: 1px solid blue">
+          <ul tal:define="breadcrumbs context/getBreadcrumbs" style="list-style-type: none">
+              <li style="display: inline">
+                  <a tal:attributes="href navRoot/absolute_url"
+                     tal:content="navRoot/Title" />
+                  <span class="divider">/</span>
+              </li>
+              <li tal:repeat="bc breadcrumbs" style="display: inline">
+                  <a tal:attributes="href bc/absolute_url"
+                      tal:content="bc/Title" />
+                  <span tal:condition="not: repeat/bc/end" class="divider">/</span>
+              </li>
+          </ul>
+      </div>
       </div>
     </div>
     <div class="keyvisual" tal:condition="isNavRoot">
@@ -120,7 +135,8 @@
 
         <!-- main -->
         <div class="container container-main" tal:condition="not: isNavRoot">
-            <div class="breadcrumbs-box">&nbsp;</div>
+            <div class="breadcrumbs-box">
+            </div>
             <div class="row-fluid">
                 <div class="span8">
 
@@ -170,54 +186,31 @@
         </div>
 
         <!-- main front-page -->
-        <div class="container container-main" tal:condition="isNavRoot">
-          <div class="breadcrumbs-box">&nbsp;</div>
+        <div class="container container-main" 
+             tal:define="slots context/getFrontpageSlots"
+             tal:condition="isNavRoot">
+          <div class="breadcrumbs-box">
+           </div>
             <div class="row-fluid">
                 <div class="span12">
                   <div class="row-fluid welcome-main">
-                    <div class="span4">
-                      <h3><i class="icon-leaf" style="padding-right:12px;"></i>Kompetenzen</h3>
+
+                    <div class="span4" tal:define="slot python: slots[0]">
+                        <h3><i tal:attributes="class slot/iconClass" style="padding-right:12px;"></i><span tal:replace="slot/Title"/></h3>
                         <div class="row-fluid"> 
                           <div class="span10">
-                            <h5><a href="">Plone CMS</a></h5>
-                            <p><a href="#">
-                              ZOPYX entwickelt auf Basis von Zope und Plone individuelle Softwarekomponenten für hoch skalierbare und ausfallsichere Web-Anwendungen, komplexe und anspruchsvolle Portallösungen sowie für Electronic-Publishing-Systeme in verteilten, heterogenen Umgebungen.</a>
-                            </p>
-                         
-                            <h5><a href="">Mongo DB</a></h5>
-                            <div><a href="#"><img class="ref-images" src="assets/img/logo-mongodb.png" /> </a><br></div>
-                            <p><a href="">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                               quis nostrud exercitation ullamco.</a>
-                            </p>
+                            <div tal:content="structure slot/text/output" />
                           </div>
                         </div>
-                      
                     </div>
           
-                    <div class="span4">
-                      <h3><i class="icon-dashboard" style="padding-right:12px;"></i>Aktuelle Themen</h3>
-                      
-                        <div class="row-fluid">
+                    <div class="span4" tal:define="slot python: slots[0]">
+                        <h3><i tal:attributes="class slot/iconClass" style="padding-right:12px;"></i><span tal:replace="slot/Title"/></h3>
+                        <div class="row-fluid"> 
                           <div class="span10">
-                            <h5><a href="">Weishaupt Relaunch</a></h5>
-
-                            <p><a href="">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                               consequat. Duis aute irure dolore.</a>
-                            </p>
-                          
-                            <h5><a href="">Produce & Publish</a></h5>
-                            <p><a href="">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                               tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                               cillum dolore eu fugiat nulla pariatur</a>  
-                            </p>
+                            <div tal:content="structure slot/text/output" />
                           </div>
-                        </div>          
+                        </div>
                     </div>
 
                     <div class="span4">                      

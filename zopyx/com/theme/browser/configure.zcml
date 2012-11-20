@@ -67,9 +67,32 @@
 
   <browser:page 
     for="*"
+    name="getFrontpageSlots"
+    class=".navigation.Navigation"
+    attribute="getFrontpageSlots"
+    permission="zope2.View"
+  />
+
+  <browser:page 
+    for="*"
+    name="getBreadcrumbs"
+    class=".navigation.Navigation"
+    attribute="getBreadcrumbs"
+    permission="zope2.View"
+  />
+
+  <browser:page 
+    for="*"
     name="getRandomTestimonial"
     class=".navigation.Navigation"
     attribute="getRandomTestimonial"
+    permission="zope2.View"
+  />
+  <browser:page 
+    for="*"
+    name="getNavigationRoot"
+    class=".navigation.Navigation"
+    attribute="getNavigationRoot"
     permission="zope2.View"
   />
  
