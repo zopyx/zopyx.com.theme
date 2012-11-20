@@ -323,46 +323,39 @@
           <div class="span12">
             <div class="row">
 <!-- logo -->  
-              <div class="span3">
-                <h5>Produce & Publish oder Demo</h5>
-                <a class="brand" href="#"><img src="assets/img/produce-publish.jpg" class="img-rounded"></a>
+              <div class="span4">
+                <h5>Verschiedenes</h5>
+                <ul>
+                    <li><a tal:attributes="href string:$nav_root_url/impressum">Impressum</a>
+                </ul>
               </div>
-<!-- about us -->             
-                <div class="span3 header">
-                    <h5>Über uns</h5>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. 
-                    <hr>
-                    Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.
-                </div>
 <!-- address -->            
-              <div class="span3">
+              <div class="span2">
                 <h5>Kontakt</h5>
                  <address>
-                  <strong>ZOPYX Ltd.</strong><br>
+                  <strong>ZOPYX Limited</strong><br>
                   Hundskapfklinge 33<br>
                   D-72074 Tübingen<br>
-                  <hr>
-                  <abbr title="Phone">P:</abbr> +49-7071/13841040<br>
-                  <abbr title="Fax">F:</abbr> +49-7071/13841049
                 </address>
               </div>
+              <div class="span2">
+                  <h5>&nbsp;</h5>
+                  <abbr title="Telefon">T:</abbr> +49-7071/13841040<br/>
+                  <abbr title="Fax">F:</abbr> +49-7071/13841049<br/>
+                  <abbr title="Email">E:</abbr> <a href="mailto:info@zopyx.com">info@zopyx.com</a>
+              </div>
 <!-- social icons -->
-               <div class="span3 social-icons">
-                    <h5>Stay in touch</h5>
-                    <span>Was sonst noch los ist:</span>
-                    <hr>
+               <div class="span4 social-icons">
+                    <h5>Bleiben Sie mit uns in Kontakt</h5>
                     <ul class="nav nav-pills">
                     <li>
-                    <a class="twitter" href="#" title="Follow @me on Twitter">
+                    <a class="twitter" href="http://twitter.com/ZOPYXLimited" title="Folgen Sie @ZOPYX auf Twitter">
                     <i class="icon-twitter"></i></a></li>
                     <li>
-                    <a class="facebook" href="#" title="&quot;Like&quot; Zopyx on Facebook">
+                        <a class="facebook" href="https://www.facebook.com/pages/Zopyx-Ltd/256178107747837" title="Folgen Sie @ZOPYX auf Facebook">
                     <i class="icon-facebook"></i></a></li>
                     <li>
-                    <a class="googleplus" href="#" title="Google +">
+                    <a class="googleplus" href="https://plus.google.com/u/0/103018428167991862768/posts" title="Folgen Sie @ZOPYX auf Google+">
                     <i class="icon-google-plus"></i></a></li>
                     <ul>
                 </div>
@@ -373,8 +366,8 @@
       <div id="footer-colophon">
         <div class="container">
           <div class="row">
-            <div class="span12">
-              <p>© 2012 All Rights reserved</p>
+            <div class="span12" style="text-align: center">
+              <p>© 2012, ZOPYX Limited, All Rights reserved</p>
             </div>
           </div>
         </div>
@@ -394,6 +387,9 @@
     <script type="text/javascript">
         $('.carousel').carousel();
         $('.readmore').readmore();
+
+        $('input[type="submit"]').addClass('btn btn-success');
+        $('input[type="reset"]').addClass('btn btn-danger');
     </script>
 
     <metal:slot define-slot="javascript_head_slot">
