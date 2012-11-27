@@ -1,5 +1,6 @@
 import random
 
+from zope.component import getMultiAdapter
 from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
 from plone.app.layout.navigation.root import getNavigationRootObject
@@ -97,7 +98,6 @@ class Navigation(BrowserView):
 
 
     def getBreadcrumbs(self):
-        from zope.component import getMultiAdapter
         breadcrumbs_view = getMultiAdapter((self.context, self.request),
                                            name='breadcrumbs_view')
         result = breadcrumbs_view.breadcrumbs()

@@ -139,8 +139,8 @@
             <div class="breadcrumbs-box">
             </div>
             <div class="row-fluid">
-                <div class="span8">
 
+                <div class="span8">
                     <metal:slot define-slot="body">
                     <div id="content">
                       <metal:bodytext define-slot="main">
@@ -173,11 +173,11 @@
                       </metal:bodytext>
                     </div>
                   </metal:slot>
-
                 </div>
+                <!-- right slot -->
                 <div class="span4">
                     <tal:def tal:define="testimonial context/getRandomTestimonial">
-                        <div tal:condition="python: testimonial is not None">
+                        <div class="testimonial" tal:condition="python: testimonial is not None">
                             <span tal:replace="structure testimonial/@@raw" />
                         </div>
                     </tal:def>
