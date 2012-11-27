@@ -1,0 +1,9 @@
+#referencesSlider {
+    height: 100px;
+}
+#referencesSlider img {
+    max-height: 100px;
+    width: 150px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
