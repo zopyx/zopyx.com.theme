@@ -138,9 +138,9 @@
         <div class="container container-main" tal:condition="not: isNavRoot">
             <div class="breadcrumbs-box">
             </div>
-            <div class="row-fluid">
+            <div class="row-fluid" tal:define="is_folder python: context.portal_type in ('Folder',)">
 
-                <div class="span8">
+                <div class="span8" tal:attributes="class python: is_folder and 'span12' or 'span8'">
                     <metal:slot define-slot="body">
                     <div id="content">
                       <metal:bodytext define-slot="main">
@@ -175,7 +175,7 @@
                   </metal:slot>
                 </div>
                 <!-- right slot -->
-                <div class="span4">
+                <div class="span4" tal:condition="not: is_folder">
                     <tal:def tal:define="testimonial context/getRandomTestimonial">
                         <div class="testimonial" tal:condition="python: testimonial is not None">
                             <span tal:replace="structure testimonial/@@raw" />
@@ -324,7 +324,7 @@
           <div class="span12">
             <div class="row">
 <!-- logo -->  
-              <div class="span4">
+              <div class="span4" id="footer-linklist">
                 <h5>Verschiedenes</h5>
                 <ul>
                     <li><a tal:attributes="href string:$nav_root_url/impressum">Impressum</a>
@@ -387,7 +387,7 @@
 
     <script type="text/javascript">
         $('.carousel').carousel();
-        $('.readmore').readmore();
+        $('.readmore').readmore({substr_len: 250});
 
         $('input[type="submit"]').addClass('btn btn-success');
         $('input[type="reset"]').addClass('btn btn-danger');

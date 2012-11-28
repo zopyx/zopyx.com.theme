@@ -311,6 +311,9 @@ footer h4, footer h3, footer h2 {
   color:white;
   font-weight: normal;
 }
+#footer-linklist a {
+    color: black;
+}
 footer li a {
   color:#B1B1B1;
   font-weight: normal;
@@ -326,4 +329,7 @@ footer a:hover {
 }
 #footer-colophon {
   background: transparent url(../img/keyvisual-bg03.png) repeat 0% 0%;
+}
+article {
+    margin-bottom: 1em;
 }
