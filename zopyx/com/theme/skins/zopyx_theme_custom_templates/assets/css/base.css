@@ -333,3 +333,16 @@ footer a:hover {
 article {
     margin-bottom: 1em;
 }
+
+table#memberships-vertical, 
+table#memberships-horizontal {
+    width: 100%;
+}
+
+table#memberships-horizontal td {
+    text-align: center;
+}
+
+table#memberships-vertical td {
+    padding-bottom: 20px;
+}
