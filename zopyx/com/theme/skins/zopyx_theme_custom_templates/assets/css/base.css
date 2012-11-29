@@ -346,3 +346,8 @@ table#memberships-horizontal td {
 table#memberships-vertical td {
     padding-bottom: 20px;
 }
+
+.callout {
+    border-left: 10px solid grey;
+    padding-left: 1em;
+}
