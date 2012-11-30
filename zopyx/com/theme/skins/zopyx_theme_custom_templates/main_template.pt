@@ -112,7 +112,7 @@
                        tal:attributes="class python: 'item zopyx-slide ' + (repeat['img'].start and 'active' or '')">
                        <h2 tal:content="img/Title"/>
                        <p tal:content="img/Description"/>
-                       <a tal:attributes="href img/target" class="keyvisual-link">Read more</a>
+                       <a tal:attributes="href img/target/to_object/absolute_url" class="keyvisual-link">Weiter lesen...</a>
                        <div class="keyvisual-img">
                            <img tal:define="scale img/@@images"
                                 tal:replace="structure python: scale.scale('image', width=360, height=230).tag()" 
