@@ -375,3 +375,11 @@ table#memberships-vertical td {
 #blog-listing img.newsImage {
     max-width: 150px;
 }
+
+#blog-listing .documentFirstHeading {
+    font-size: 24px;
+}
+
+#blog-listing .documentDescription {
+    font-size: 16px;
+}
