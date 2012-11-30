@@ -351,3 +351,27 @@ table#memberships-vertical td {
     border-left: 10px solid grey;
     padding-left: 1em;
 }
+
+/* Blog */
+
+#blog-listing .row {
+    margin-left: 0px !important;
+}
+
+#blog-listing .blog-content {
+    margin-bottom: 2em;
+}
+
+#blog-listing .blog-content {
+    margin-bottom: 2em;
+    margin-left: 0px !important;
+}
+
+#blog-listing .blog-item {
+    margin-top: 1em;
+    margin-left: 0px;
+}
+
+#blog-listing img.newsImage {
+    max-width: 150px;
+}
