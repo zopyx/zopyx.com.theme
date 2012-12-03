@@ -4,6 +4,7 @@
         tal:define="portal_url context/@@plone_portal_state/portal_url;
                     navRoot context/getNavigationRoot;
                     nav_root_url context/@@plone_portal_state/navigation_root_url;
+                    insideBlog python: navRoot.getId() not in ('de', 'en');
                     isNavRoot context/@@isNavigationRoot">
   <head>
     <meta charset="utf-8">
@@ -58,11 +59,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" tal:attributes="href context/@@plone_portal_state/navigation_root_url"><img src="assets/img/zopyx-logo.png" class="img-rounded"></a>
-              <form id="global-nav-search" class="navbar-search pull-right" tal:attributes="action string:$nav_root_url/search">
-                  <input type="text" class="search-query" placeholder="Search" name="SearchableText" />
+          <a class="brand" tal:attributes="href nav_root_url" style="color: white"><h1>Andreas Jung</h1></a>
+          <a class="brand" 
+             tal:condition="not: insideBlog"
+              tal:attributes="href context/@@plone_portal_state/navigation_root_url"><img src="assets/img/zopyx-logo.png" class="img-rounded">
+          </a>
+           <form id="global-nav-search" class="navbar-search pull-right" tal:attributes="action string:$nav_root_url/search">
+            <input type="text" class="search-query" placeholder="Search" name="SearchableText" />
            </form>
-          <div class="nav-collapse collapse">
+          <div class="nav-collapse collapse" tal:condition="not: insideBlog">
             <ul class="nav" tal:define="navi context/@@getNavigation">
                  <li class="dropdown" 
                      tal:repeat="item context/getNavigation">
@@ -108,20 +113,18 @@
               <!-- Carousel items -->
               <div class="carousel-inner">
                   <tal:def define="images context/@@getRotatorImages">
-                  <div tal:repeat="img images"
-                       tal:attributes="class python: 'item zopyx-slide ' + (repeat['img'].start and 'active' or '')">
-                       <h2 tal:content="img/Title"/>
-                       <p tal:content="img/Description"/>
-                       <a tal:attributes="href img/target/to_object/absolute_url" class="keyvisual-link">Weiter lesen...</a>
-                       <div class="keyvisual-img">
-                           <img tal:define="scale img/@@images"
-                                tal:replace="structure python: scale.scale('image', width=360, height=230).tag()" 
-                            />
-                       </div>
-                  </div>
-
+                      <div tal:repeat="img images"
+                           tal:attributes="class python: 'item zopyx-slide ' + (repeat['img'].start and 'active' or '')">
+                           <h2 tal:content="img/Title"/>
+                           <p tal:content="img/Description"/>
+                           <a tal:attributes="href img/target/to_object/absolute_url" class="keyvisual-link">Weiter lesen...</a>
+                           <div class="keyvisual-img">
+                               <img tal:define="scale img/@@images"
+                                    tal:replace="structure python: scale.scale('image', width=360, height=230).tag()" 
+                                />
+                           </div>
+                      </div>
                   </tal:def>
-                  
               </div>
               <!-- Carousel nav -->
               <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
@@ -318,7 +321,7 @@
       </section>
     </article>
     <!-- ----------------------------------- /Footer -->
-    <footer>
+    <footer tal:condition="not: insideBlog">
       <div class="container">
         <div class="row">
           <div class="span12">

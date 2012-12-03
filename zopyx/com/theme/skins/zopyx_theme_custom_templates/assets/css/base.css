@@ -383,3 +383,7 @@ table#memberships-vertical td {
 #blog-listing .documentDescription {
     font-size: 16px;
 }
+
+#content-core .row {
+    margin-left: 0;
+}
