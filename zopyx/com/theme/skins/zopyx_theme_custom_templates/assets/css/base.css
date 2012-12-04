@@ -387,3 +387,7 @@ table#memberships-vertical td {
 #content-core .row {
     margin-left: 0;
 }
+
+.section-andreas-jung h1.documentFirstHeading {
+    display: none;
+}

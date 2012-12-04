@@ -5,6 +5,7 @@
                     navRoot context/getNavigationRoot;
                     nav_root_url context/@@plone_portal_state/navigation_root_url;
                     insideBlog python: navRoot.getId() not in ('de', 'en');
+                    navroot_id navRoot/getId;
                     isNavRoot context/@@isNavigationRoot">
   <head>
     <meta charset="utf-8">
@@ -49,7 +50,7 @@
     </metal:slot>
   </head>
 
-  <body data-spy="scroll" data-target=".sidebar-nav">
+  <body data-spy="scroll" data-target=".sidebar-nav" tal:attributes="class string:section-${navroot_id/lower}">
 
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
@@ -59,7 +60,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" tal:attributes="href nav_root_url" style="color: white"><h1>Andreas Jung</h1></a>
+          <a class="brand" tal:condition="insideBlog" tal:attributes="href nav_root_url" style="color: white"><h1>Andreas Jung</h1></a>
           <a class="brand" 
              tal:condition="not: insideBlog"
               tal:attributes="href context/@@plone_portal_state/navigation_root_url"><img src="assets/img/zopyx-logo.png" class="img-rounded">
