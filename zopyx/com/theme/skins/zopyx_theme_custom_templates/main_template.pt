@@ -6,6 +6,7 @@
                     nav_root_url context/@@plone_portal_state/navigation_root_url;
                     insideBlog python: navRoot.getId() not in ('de', 'en');
                     navroot_id navRoot/getId;
+                    normalizeString nocall:context/@@plone/normalizeString;
                     isNavRoot context/@@isNavigationRoot">
   <head>
     <meta charset="utf-8">
@@ -54,7 +55,10 @@
     </metal:slot>
   </head>
 
-  <body data-spy="scroll" data-target=".sidebar-nav" tal:attributes="class string:section-${navroot_id/lower}">
+  <body data-spy="scroll" 
+      data-target=".sidebar-nav" 
+      tal:define="pt python: normalizeString(context.portal_type)" 
+      tal:attributes="class string:section-${navroot_id/lower} context-${context/getId} portal-type-$pt">
 
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
