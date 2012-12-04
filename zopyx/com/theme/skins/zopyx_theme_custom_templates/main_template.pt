@@ -23,7 +23,9 @@
       }
     </style>
     <link rel="stylesheet" tal:attributes="href string:$portal_url/assets/css/bootstrap-css">
+    <!--
     <link rel="stylesheet" tal:attributes="href string:$portal_url/assets/css/base.css" >
+    -->
     <link rel="stylesheet" tal:attributes="href string:$portal_url/assets/css/font-awesome.css">
 
     <!-- fonts -->
@@ -44,7 +46,9 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" tal:attributes="src string:$portal_url/assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" tal:attributes="src string:$portal_url/assets/ico/apple-touch-icon-57-precomposed.png">
 
+    <link rel="stylesheet" tal:attributes="href string:$portal_url/assets/css/base.css" >
     <link rel="stylesheet" tal:attributes="href string:$portal_url/assets/css/local.css" >
+
     <!-- Plone compatibility -->
     <metal:slot define-slot="style_slot">
     </metal:slot>
@@ -66,7 +70,7 @@
               tal:attributes="href context/@@plone_portal_state/navigation_root_url"><img src="assets/img/zopyx-logo.png" class="img-rounded">
           </a>
            <form id="global-nav-search" class="navbar-search pull-right" tal:attributes="action string:$nav_root_url/search">
-            <input type="text" class="search-query" placeholder="Search" name="SearchableText" />
+            <input type="text" class="search-query" placeholder="Suchen" name="SearchableText" />
            </form>
           <div class="nav-collapse collapse" tal:condition="not: insideBlog">
             <ul class="nav" tal:define="navi context/@@getNavigation">

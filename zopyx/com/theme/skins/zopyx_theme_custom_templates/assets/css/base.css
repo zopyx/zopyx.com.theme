@@ -391,3 +391,18 @@ table#memberships-vertical td {
 .section-andreas-jung h1.documentFirstHeading {
     display: none;
 }
+
+.formHelp {
+    display: block;
+    font-size: 0.8em;
+    color: #666666;
+}
+
+.fieldRequired {
+    display: none;
+}
+
+.fieldErrorBox {
+    color: red;
+    font-size: 0.8em;
+}

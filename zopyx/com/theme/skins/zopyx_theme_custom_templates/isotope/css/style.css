@@ -103,7 +103,6 @@ h1, h2, h3, p, ul, ol, pre, dl {
 
 h1, h2, #super-list, .element, .tagline, #index-list, 
 .super-list .link {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 h1, h2, h3 { font-weight: bold; }
@@ -457,7 +456,6 @@ body {
   margin-bottom: 0.5em;
   margin-top: 0;
   font-weight: bold;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 #site-nav h2 {
