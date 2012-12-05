@@ -169,10 +169,7 @@
                             </metal:title>
 
                             <metal:description define-slot="content-description">
-                                <metal:comment tal:content="nothing">
-                                    If you write a custom description always use
-                                    <div class="documentDescription"></div> for it.
-                                </metal:comment>
+                                <div class="documentDescription" tal:condition="context/Description" tal:content="context/Description"></div> 
                             </metal:description>
 
                             <div id="content-core">
@@ -188,11 +185,13 @@
                 </div>
                 <!-- right slot -->
                 <div class="span4" tal:condition="not: is_folder">
+                    <div class="span4" metal:define-slot="right-slot-before"></div>
                     <tal:def tal:define="testimonial context/getRandomTestimonial">
                         <div class="testimonial" tal:condition="python: testimonial is not None">
                             <span tal:replace="structure testimonial/@@raw" />
                         </div>
                     </tal:def>
+                    <div class="span4" metal:define-slot="right-slot-after"></div>
                 </div>
           </div>
         </div>
