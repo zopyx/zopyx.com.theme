@@ -1,9 +1,16 @@
 #referencesSlider {
-    height: 100px;
+    height: 150px;
+/*    border: 1px solid blue;*/
+    vertical-align: middle !important;
 }
 #referencesSlider img {
-    max-height: 100px;
     width: 150px;
     padding-left: 50px;
     padding-right: 50px;
+/*    border: 1px solid green;*/
 }
+
+#referencesSlider a {
+/*    border: 1px solid pink;*/
+}
+
