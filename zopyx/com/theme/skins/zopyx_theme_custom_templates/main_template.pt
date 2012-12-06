@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <metal:define define-macro="master">
     <html lang="en" 
+        i18n:domain="zopyx.policy"
         tal:define="portal_url context/@@plone_portal_state/portal_url;
                     navRoot context/getNavigationRoot;
                     nav_root_url context/@@plone_portal_state/navigation_root_url;
@@ -242,7 +243,7 @@
                                   <div class="news-icon"><div class="img"><i class="icon-user"></i></div></div>
                                   <div class="news-text">
                                       <h6><a tal:attributes="href item/url" tal:content="item/description" /></h6>
-                                      <font size="1"><a tal:attributes="href item/url">Read More</a></font>
+                                      <font size="1"><a tal:attributes="href item/url" i18n:translate="">Read more</a></font>
                                       <p class="pull-right"><em><i class="icon-map-marker"></i><span tal:replace="item/created"/></em></p>
                                   </div>
                                 <hr>
