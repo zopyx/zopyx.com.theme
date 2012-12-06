@@ -26,6 +26,9 @@ h3 {
 .navbar-search {
   margin-top: 29px;
 }
+.navbar-search input[type="text"] {
+    height:30px;
+    }
 .navbar-inner {
   background-color: #40454F;
   background-image: -moz-linear-gradient(top, #5b6270, #40454F);
@@ -99,11 +102,11 @@ color: #a8a9ad;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a5d17a', endColorstr='#69b322',GradientType=0 ); /* IE6-9 */
 }
 .zopyx-slide {
-  margin-top:20px;
+ /* margin-top:20px;*/
   }
 .keyvisual {
   width: 100%;
-  height: 320px;
+  height: 340px;
   position: relative;
   margin: 0 auto;
   overflow: hidden;
@@ -113,15 +116,10 @@ color: #a8a9ad;
   -moz-box-shadow: inset 0px 0px 5px rgba(0,0,0,.25);
   box-shadow: inset 0px 0px 5px rgba(0,0,0,.25);
 }
-.zopyx-slide .keyvisual-img {
-position: absolute;
-opacity: 0;
-left: 110%;
-}
 .zopyx-slide h2 {
   color: #fff;
   font-size: 36px;
-  width: 45%;
+  width: 48%;
   white-space: nowrap;
   z-index: 10;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
@@ -129,14 +127,14 @@ left: 110%;
   font-weight: 700;
   background: rgba(91,192,222,.8);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#b3000000',GradientType=0 ); /* IE6-8 */
-  padding: 28px 20px;
+  padding: 32px 20px;
   margin-left: 66px;
 }
 .zopyx-slide p {
   background: rgba(91,192,222,.8);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#b3000000',GradientType=0 ); /* IE6-8 */
-  width: 45%;
-  padding: 28px 20px 18px 20px;
+  width: 48%;
+  padding: 32px 20px 26px 20px;
   top: 156px;
   color: #fff;
   font-size: 18px;
@@ -149,13 +147,14 @@ left: 110%;
   margin-left: 66px;
 }
 .zopyx-slide .keyvisual-img {
-  left: 60%;
-  opacity: 1;
-}
-.zopyx-slide .keyvisual-img {
-  width: 40%;
   top: 0px;
-  height: 350px;
+  left: 60%;
+  position: absolute;
+  opacity: 1;
+  background: rgba(91,192,222,.8);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#b3000000',GradientType=0 ); /* IE6-8 */
+  top: 0px;
+  padding:12px;
 }
 .zopyx-slide .keyvisual-link {
   border-radius: 26px;
@@ -267,6 +266,7 @@ ul.news-list .news-text {
   padding-left: 1em;
   vertical-align: top; 
   color: #444;
+  width:100%;
 }
 ul.news-list h6 {
   margin:0;
@@ -327,6 +327,12 @@ footer h3, footer h4 {
 footer a:hover {
   color:whiteSmoke;
 }
+#footer-linklist ul {
+    margin-left:0;
+    }
+#footer-linklist ul li {
+    list-style-type:none;
+    }
 #footer-colophon {
   background: transparent url(../img/keyvisual-bg03.png) repeat 0% 0%;
 }
