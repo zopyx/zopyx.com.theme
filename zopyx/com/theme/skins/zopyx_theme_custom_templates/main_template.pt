@@ -185,13 +185,13 @@
                 </div>
                 <!-- right slot -->
                 <div class="span4" tal:condition="not: is_folder">
-                    <div class="span4" metal:define-slot="right-slot-before"></div>
+                    <div metal:define-slot="right-slot-before"></div>
                     <tal:def tal:define="testimonial context/getRandomTestimonial">
                         <div class="testimonial" tal:condition="python: testimonial is not None">
                             <span tal:replace="structure testimonial/@@raw" />
                         </div>
                     </tal:def>
-                    <div class="span4" metal:define-slot="right-slot-after"></div>
+                    <div metal:define-slot="right-slot-after"></div>
                 </div>
           </div>
         </div>
