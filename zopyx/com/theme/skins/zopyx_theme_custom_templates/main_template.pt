@@ -335,11 +335,11 @@
           <div class="span12">
             <div class="row">
 <!-- logo -->  
-              <div class="span4" id="footer-linklist">
+              <div class="span2" id="footer-linklist">
                 <h5>Verschiedenes</h5>
                 <ul>
-                    <li><a tal:attributes="href string:$nav_root_url/impressum">Impressum</a>
-                </ul>
+                    <li><i class="icon-chevron-right"></i><a tal:attributes="href string:$nav_root_url/impressum">Impressum</a>
+                    </ul>
               </div>
 <!-- address -->            
               <div class="span2">
@@ -350,7 +350,7 @@
                   D-72074 Tübingen<br>
                 </address>
               </div>
-              <div class="span2">
+              <div class="span4">
                   <h5>&nbsp;</h5>
                   <abbr title="Telefon">T:</abbr> +49-7071/13841040<br/>
                   <abbr title="Fax">F:</abbr> +49-7071/13841049<br/>
