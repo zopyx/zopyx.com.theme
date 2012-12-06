@@ -354,6 +354,11 @@ table#memberships-vertical td {
     padding-left: 1em;
 }
 
+.documentDescription {
+    font-size: 20px;
+    margin-bottom: 1em;
+}
+
 /* Blog */
 
 #blog-listing .row {
@@ -422,4 +427,9 @@ table#memberships-vertical td {
     -webkit-column-break-inside: avoid;
     -moz-column-break-inside: avoid;
     column-break-inside: avoid;
+}
+
+/* Hide search field in search.pt */
+#search-field input {
+    display: none;
 }
