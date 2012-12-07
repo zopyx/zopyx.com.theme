@@ -187,7 +187,7 @@
                 <!-- right slot -->
                 <div class="span4" tal:condition="not: is_folder">
                     <div metal:define-slot="right-slot-before"></div>
-                    <tal:def tal:define="testimonial context/getRandomTestimonial">
+                    <tal:def define="testimonial context/getRandomTestimonial">
                         <div class="testimonial" tal:condition="python: testimonial is not None">
                             <span tal:replace="structure testimonial/@@raw" />
                         </div>
@@ -340,6 +340,7 @@
                 <h5>Verschiedenes</h5>
                 <ul>
                     <li><i class="icon-chevron-right"></i><a tal:attributes="href string:$nav_root_url/impressum">Impressum</a>
+                    <li><i class="icon-chevron-right"></i><a tal:attributes="href string:http://www.zopyx.com">zopyx.com (English)</a>
                     </ul>
               </div>
 <!-- address -->            
