@@ -449,6 +449,7 @@ table#memberships-vertical td {
 .listing2col .image-block {
     height: 200px;
 }
+
 .listing2col .read-more {
     margin-top: 1em;
 }
@@ -456,6 +457,15 @@ table#memberships-vertical td {
 .listing2col .description {
     max-width: 200px;
     font-size: 1em;
+}
+
+.listing2col-260 .description {
+    max-width: 260px;
+}
+
+.listing2col-260 img {
+    width: 260px;
+    height: 200px;
 }
 
 /* project references listing */
