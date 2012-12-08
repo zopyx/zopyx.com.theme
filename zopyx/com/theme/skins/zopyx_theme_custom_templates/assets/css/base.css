@@ -500,7 +500,7 @@ table#memberships-vertical td {
 }
 
 .project-references .isotope, 
-.project-refrences .isotope .isotope-item {
+.project-references .isotope .isotope-item {
   /* change duration value to whatever you like */
   -webkit-transition-duration: 0.8s;
      -moz-transition-duration: 0.8s;
@@ -509,8 +509,7 @@ table#memberships-vertical td {
           transition-duration: 0.8s;
 }
 
-
-.project-refrences .isotope {
+.project-references .isotope {
   -webkit-transition-property: height, width;
      -moz-transition-property: height, width;
       -ms-transition-property: height, width;
@@ -518,7 +517,7 @@ table#memberships-vertical td {
           transition-property: height, width;
 }
 
-.project-refrences .isotope .isotope-item {
+.project-references .isotope .isotope-item {
   -webkit-transition-property: -webkit-transform, opacity;
      -moz-transition-property:    -moz-transform, opacity;
       -ms-transition-property:     -ms-transform, opacity;
@@ -527,9 +526,9 @@ table#memberships-vertical td {
 }
 
 /**** disabling Isotope CSS3 transitions ****/
-.project-refrences .isotope.no-transition,
-.project-refrences .isotope.no-transition .isotope-item,
-.project-refrences .isotope .isotope-item.no-transition {
+.project-references .isotope.no-transition,
+.project-references .isotope.no-transition .isotope-item,
+.project-references .isotope .isotope-item.no-transition {
   -webkit-transition-duration: 0s;
      -moz-transition-duration: 0s;
       -ms-transition-duration: 0s;
