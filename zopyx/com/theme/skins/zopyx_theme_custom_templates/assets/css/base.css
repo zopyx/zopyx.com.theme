@@ -439,3 +439,101 @@ table#memberships-vertical td {
 #search-field input {
     display: none;
 }
+
+
+
+/* Listing 2x view */
+.listing2col .row {
+    margin-bottom: 1em;
+}
+.listing2col .image-block {
+    height: 200px;
+}
+.listing2col .read-more {
+    margin-top: 1em;
+}
+
+.listing2col .description {
+    max-width: 200px;
+    font-size: 1em;
+}
+
+/* project references listing */
+.project-references .no-filters,
+.project-references .filters {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}   
+
+.project-references .no-filters {
+    margin-top: 4px;
+}
+
+.project-references .filters li:first-child {
+    width: 150px;
+}
+
+.project-references .filters li {
+    display: inline;
+}
+
+.project-references .filters button {
+    min-width: 80px;
+    margin-right: 10px;
+    margin-bottom: 0.5em;
+}
+
+.project-references #container .item {
+    width: 225px;
+    height: 160px;
+    padding-right: 0px;
+    text-align: center;
+    float: left;
+    position: relative;
+    line-height: 160px;
+}
+.project-references .item a {
+    border: 1px solid white;
+    margin: auto;
+    vertical-align: middle;
+}
+
+.project-references .isotope, 
+.project-refrences .isotope .isotope-item {
+  /* change duration value to whatever you like */
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+
+.project-refrences .isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.project-refrences .isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+.project-refrences .isotope.no-transition,
+.project-refrences .isotope.no-transition .isotope-item,
+.project-refrences .isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+

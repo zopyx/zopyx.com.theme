@@ -387,19 +387,19 @@
         </div>
       </div>
     </footer>
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+
+
+
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script src="http://cdn.jquerytools.org/1.2.7/all/jquery.tools.min.js"></script>
 
-    <!-- third party JS -->
+
     <script type="text/javascript" tal:attributes="src string:$portal_url/readmore/jquery.readmore.min.js"></script>
     <script type="text/javascript" tal:attributes="src string:$portal_url/isotope/jquery.isotope.js"></script>
 
     <script type="text/javascript">
-        $('.carousel').carousel();
+        $('.carousel').carousel({interval: 6000});
         $('.readmore').readmore({substr_len: 250});
 
         $('input[type="submit"]').addClass('btn btn-success');
