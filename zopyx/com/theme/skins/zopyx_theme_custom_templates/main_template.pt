@@ -49,7 +49,6 @@
     <link rel="apple-touch-icon-precomposed" tal:attributes="src string:$portal_url/assets/ico/apple-touch-icon-57-precomposed.png">
 
     <link rel="stylesheet" tal:attributes="href string:$portal_url/assets/css/base.css" >
-    <link rel="stylesheet" tal:attributes="href string:$portal_url/assets/css/local.css" >
 
     <!-- Plone compatibility -->
     <metal:slot define-slot="style_slot">
