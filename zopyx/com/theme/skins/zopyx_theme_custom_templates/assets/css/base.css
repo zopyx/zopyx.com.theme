@@ -546,3 +546,24 @@ table#memberships-vertical td {
           transition-duration: 0s;
 }
 
+/* News summary */
+
+
+#news-summary .listing-row {
+    margin-bottom: 1.5em;
+    margin-left: 0px !important;
+}
+#news-summary div img {
+    margin-top: 10px;
+}
+#news-summary .image-block {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#news-summary button.read-more {
+    margin-top: 1em;
+}
+#news-summary h4 a {
+    color: black;
+}
