@@ -568,24 +568,94 @@ table#memberships-vertical td {
     color: black;
 }
 
-/* References slider frontpage */
 
-#referencesSlider {
-    height: 150px;
-    vertical-align: middle !important;
+/* this makes it possible to add next button beside scrollable */
+#scrollable-references {
+    float:left;
 }
-#referencesSlider img {
-    width: 150px;
-    padding-left: 50px;
-    padding-right: 50px;
-    margin: auto;
+
+/* prev, next, prevPage and nextPage buttons */
+.scrollable a.browse {
+    background:url(../img/hori_large.png) no-repeat;
+    display:block;
+    width:30px;
+    height:30px;
+    float:left;
+    margin:40px 10px;
+    cursor:pointer;
+    font-size:1px;
+    margin-top: 60px;
+}
+
+/* right */
+.scrollable a.right { background-position: 0 -30px; clear:right; margin-right: 0px;}
+.scrollable a.right:hover { background-position:-30px -30px; }
+.scrollable a.right:active { background-position:-60px -30px; }
+
+
+/* left */
+.scrollable a.left { margin-left: 0px; }
+.scrollable a.left:hover  { background-position:-30px 0; }
+.scrollable a.left:active { background-position:-60px 0; }
+
+/* up and down */
+.scrollable a.up, 
+.scrollable a.down  {
+    background:url(../img/vert_large.png) no-repeat;
+    float: none;
+    margin: 10px 50px;
+}
+
+/* up */
+.scrollable a.up:hover { background-position:-30px 0; }
+.scrollable a.up:active { background-position:-60px 0; }
+
+/* down */
+.scrollable a.down { background-position: 0 -30px; }
+.scrollable a.down:hover { background-position:-30px -30px; }
+.scrollable a.down:active { background-position:-60px -30px; }
+
+
+/* disabled navigational button */
+.scrollable a.disabled {
+    visibility:hidden !important;
+}
+
+#scrollable-references {
+    position:relative;
+    overflow:hidden;
+    width: 950px;
+    height: 150px;
+}
+
+#scrollable-references .items {
+    /* this cannot be too large */
+    width:20000em;
+    position:absolute;
+    clear:both;
+}
+
+#scrollable-references .items div {
+    width:1000px;
+}
+
+#scrollable-references img {
+    background-color:#fff;
+    width:150px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#scrollable-references .active {
+    position:relative;
+    cursor:default;
+}
+
+#scrollable-references .img-container {
+    display: table-cell;
     vertical-align: middle;
-}
-
-#referencesSlider .item {
-    line-height: 150px;
     height: 150px;
-    padding-left: 100px;
-    text-align: center;
-    float: left;
+}
+#scrollable-references .img-container  img {
+    vertical-align: middle;
 }
