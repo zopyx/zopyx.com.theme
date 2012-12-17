@@ -184,7 +184,7 @@
                   </metal:slot>
                 </div>
                 <!-- right slot -->
-                <div class="span4" tal:condition="not: is_folder">
+                <div class="span4" tal:condition="python: not (is_folder or context.portal_type in 'zopyx.policy.projectreference')">
                     <div metal:define-slot="right-slot-before"></div>
                     <tal:def define="testimonial context/getRandomTestimonial">
                         <div class="testimonial" tal:condition="python: testimonial is not None">
