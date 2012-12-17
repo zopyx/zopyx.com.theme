@@ -659,3 +659,13 @@ table#memberships-vertical td {
 #scrollable-references .img-container  img {
     vertical-align: middle;
 }
+
+/* Project references */
+#refCarousel .caption {
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+
+#refCarousel img {
+    border: 1px dashed #eeeeee;
+}
