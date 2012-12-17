@@ -41,9 +41,14 @@ class Navigation(BrowserView):
                         url = '%s/foldervertical_view#%s' % (folder.absolute_url(), brain.getId)
                     children.append(dict(title=brain.Title, url=url))
 
-            entries.append(dict(title=folder.Title(),
-                                url=folder.absolute_url(),
-                                children=children))
+            if len(children) == 1:
+                entries.append(dict(title=folder.Title(),
+                                    url=children[0]['url'],
+                                    children=()))
+            else:
+                entries.append(dict(title=folder.Title(),
+                                    url=folder.absolute_url(),
+                                    children=children))
 
         return entries                                                                             
 
