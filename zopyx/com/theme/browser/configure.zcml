@@ -95,5 +95,20 @@
     attribute="getNavigationRoot"
     permission="zope2.View"
   />
+  <browser:page 
+    for="*"
+    name="sideSlotVisible"
+    class=".navigation.Navigation"
+    attribute="sideSlotVisible"
+    permission="zope2.View"
+  />
+  <browser:page 
+    for="*"
+    name="getMainSlotCSS"
+    class=".navigation.Navigation"
+    attribute="getMainSlotCSS"
+    permission="zope2.View"
+  />
+ 
  
 </configure>

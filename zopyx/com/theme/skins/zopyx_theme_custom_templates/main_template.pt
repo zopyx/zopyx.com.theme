@@ -150,9 +150,9 @@
         <div class="container container-main" tal:condition="not: isNavRoot">
             <div class="breadcrumbs-box">
             </div>
-            <div class="row-fluid" tal:define="is_folder python: context.portal_type in ('Folder',)">
+            <div class="row-fluid">
 
-                <div class="span8" tal:attributes="class python: is_folder and 'span12' or 'span8'">
+                <div class="span8" tal:attributes="class context/@@getMainSlotCSS">
                     <metal:slot define-slot="body">
                     <div id="content">
                       <metal:bodytext define-slot="main">
@@ -184,7 +184,7 @@
                   </metal:slot>
                 </div>
                 <!-- right slot -->
-                <div class="span4" tal:condition="python: not (is_folder or context.portal_type in 'zopyx.policy.projectreference')">
+                <div class="span4" tal:condition="context/@@sideSlotVisible">
                     <div metal:define-slot="right-slot-before"></div>
                     <tal:def define="testimonial context/getRandomTestimonial">
                         <div class="testimonial" tal:condition="python: testimonial is not None">

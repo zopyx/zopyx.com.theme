@@ -110,3 +110,11 @@ class Navigation(BrowserView):
 
     def getNavigationRoot(self):
         return self.navroot
+
+    def getMainSlotCSS(self):
+        if self.context.portal_type in ('Folder', 'zopyx.policy.projectreference'):
+            return 'span12'
+        return 'span8'
+
+    def sideSlotVisible(self):
+        return not self.context.portal_type in ('Folder', 'zopyx.policy.projectreference')
