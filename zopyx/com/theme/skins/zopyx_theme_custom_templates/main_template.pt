@@ -44,6 +44,7 @@
     <link rel="apple-touch-icon-precomposed" tal:attributes="src string:$portal_url/assets/ico/apple-touch-icon-57-precomposed.png">
 
     <link rel="stylesheet" tal:attributes="href string:$portal_url/assets/css/base.css" >
+    <link rel="stylesheet" tal:attributes="href string:$portal_url/bxslider/jquery.bxslider.css" >
     <script type="text/javascript" src="http://jira.veit-schiele.de/s/en_UK4apz3h/782/24/1.2.5/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?collectorId=1340b083"></script>
 
 
@@ -115,27 +116,19 @@
       <div class="container">
         <div class="row-fluid">
           <div class="span12 welcome-image">
-            <div id="myCarousel" class="carousel slide">
-              <!-- Carousel items -->
-              <div class="carousel-inner">
-                  <tal:def define="images context/@@getRotatorImages">
-                      <div tal:repeat="img images"
-                           tal:attributes="class python: 'item zopyx-slide ' + (repeat['img'].start and 'active' or '')">
-                           <h2 tal:content="img/Title"/>
-                           <p tal:content="img/Description"/>
-                           <a tal:attributes="href img/target/to_object/absolute_url" class="keyvisual-link">Weiter lesen...</a>
-                           <div class="keyvisual-img">
-                               <img tal:define="scale img/@@images"
-                                    tal:replace="structure python: scale.scale('image', width=360, height=230).tag()" 
-                                />
-                           </div>
-                      </div>
-                  </tal:def>
-              </div>
-              <!-- Carousel nav -->
-              <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-              <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-            </div>
+              <ul class="bxslider">
+                  <li tal:repeat="img context/@@getRotatorImages"
+                       tal:attributes="class python: 'item zopyx-slide ' + (repeat['img'].start and 'active' or '')">
+                       <h2 tal:content="img/Title"/>
+                       <p tal:content="img/Description"/>
+                       <a tal:attributes="href img/target/to_object/absolute_url" class="keyvisual-link">Weiter lesen...</a>
+                       <div class="keyvisual-img">
+                           <img tal:define="scale img/@@images"
+                                tal:replace="structure python: scale.scale('image', width=360, height=230).tag()" 
+                            />
+                       </div>
+                  </li>
+              </ul>
           </div>
         </div><!-- /row-fluid -->
       </div> <!-- /container -->
@@ -388,6 +381,7 @@
     <script type="text/javascript" tal:attributes="src string:$portal_url/isotope/jquery.isotope.js"></script>
     <script type="text/javascript" tal:attributes="src string:$portal_url/assets/js/olark.js"></script>
     <script type="text/javascript" tal:attributes="src string:$portal_url/cycle/jquery.cycle.js"></script>
+    <script type="text/javascript" tal:attributes="src string:$portal_url/bxslider/jquery.bxslider.min.js"></script>
 
     <script type="text/javascript">
         $('.carousel').carousel({interval: 6000});
@@ -396,6 +390,7 @@
         $('input[type="submit"]').addClass('btn btn-success');
         $('input[type="reset"]').addClass('btn btn-danger');
         $('.image-cycle').cycle({fx: 'fadeZoom', speed: 1000, timeout: 5000});
+        $('.bxslider').bxSlider({randomStart: true,speed: 1000, pause:4000, auto: true});
     </script>
 
     <!-- Google Analytics -->
