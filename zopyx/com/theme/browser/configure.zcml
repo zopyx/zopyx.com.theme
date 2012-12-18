@@ -52,6 +52,13 @@
   />
   <browser:page 
     for="*"
+    name="getProjectReferencesUnchunked"
+    class=".navigation.Navigation"
+    attribute="getProjectReferencesUnchunked"
+    permission="zope2.View"
+  />
+  <browser:page 
+    for="*"
     name="isNavigationRoot"
     class=".navigation.Navigation"
     attribute="isNavigationRoot"

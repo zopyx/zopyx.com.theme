@@ -70,12 +70,18 @@ class Navigation(BrowserView):
         return results[:num_items]
 
     def getProjectReferences(self, chunk_size=4):
-
         brains = self.catalog(portal_type='zopyx.policy.projectreference')
         refs = list()
         for brain in brains:
             refs.append(brain.getObject())
         return list(chunks(refs, chunk_size))
+
+    def getProjectReferencesUnchunked(self):
+        brains = self.catalog(portal_type='zopyx.policy.projectreference')
+        refs = list()
+        for brain in brains:
+            refs.append(brain.getObject())
+        return refs
     
     def getRotatorImages(self, chunk_size=4):
         brains = self.catalog(portal_type='zopyx.policy.rotatorimage')

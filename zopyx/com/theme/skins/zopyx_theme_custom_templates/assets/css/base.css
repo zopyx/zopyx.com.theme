@@ -651,12 +651,14 @@ table#memberships-vertical td {
     cursor:default;
 }
 
-#scrollable-references .img-container {
+#references-cycler .img-container {
     display: table-cell;
     vertical-align: middle;
-    height: 150px;
+    height: 150px !important;
+    width: 150px;
 }
-#scrollable-references .img-container  img {
+
+#references-cycler .img-container img {
     vertical-align: middle;
 }
 
@@ -668,4 +670,18 @@ table#memberships-vertical td {
 
 #refCarousel img {
     border: 1px dashed #eeeeee;
+}
+
+div.image-container
+{
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+div.image-container img
+{
+    position: absolute;
+    left: 0;
+    top: 0;
 }
