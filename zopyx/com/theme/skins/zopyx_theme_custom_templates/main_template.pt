@@ -386,7 +386,6 @@
     <script type="text/javascript">
         $('.carousel').carousel({interval: 6000});
         $('.readmore').readmore({substr_len: 250});
-        $("#scrollable-references").scrollable({ easing: 'easeOutQuint', circular: true, speed: 1000}).navigator().autoscroll({interval:5000});;
         $('input[type="submit"]').addClass('btn btn-success');
         $('input[type="reset"]').addClass('btn btn-danger');
         $('.image-cycle').cycle({fx: 'fadeZoom', speed: 1000, timeout: 5000});
