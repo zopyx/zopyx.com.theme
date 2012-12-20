@@ -397,7 +397,8 @@ table#memberships-vertical td {
     font-size: 16px;
 }
 
-#blog-listing .blog-item h1.documentFirstHeading {
+.portal-type-news-item h1.documentFirstHeading, 
+.blog-item h1.documentFirstHeading {
     display: block !important;
 }
 
@@ -405,7 +406,7 @@ table#memberships-vertical td {
     margin-left: 0;
 }
 
-.section-andreas-jung h1.documentFirstHeading {
+.context-andreas-jung h1.documentFirstHeading {
     display: none;
 }
 
