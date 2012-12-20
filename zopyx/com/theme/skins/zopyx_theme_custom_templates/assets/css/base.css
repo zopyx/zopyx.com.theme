@@ -397,6 +397,10 @@ table#memberships-vertical td {
     font-size: 16px;
 }
 
+#blog-listing .blog-item h1.documentFirstHeading {
+    display: block !important;
+}
+
 #content-core .row {
     margin-left: 0;
 }
