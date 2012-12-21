@@ -81,6 +81,7 @@ class Navigation(BrowserView):
         refs = list()
         for brain in brains:
             refs.append(brain.getObject())
+        random.shuffle(refs)
         return refs
     
     def getRotatorImages(self, chunk_size=4):
