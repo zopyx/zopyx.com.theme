@@ -384,12 +384,12 @@
     <script type="text/javascript" tal:attributes="src string:$portal_url/bxslider/jquery.bxslider.min.js"></script>
 
     <script type="text/javascript">
-        $('.carousel').carousel({interval: 6000});
+        $('.carousel').carousel({interval: 9000});
         $('.readmore').readmore({substr_len: 250});
         $('input[type="submit"]').addClass('btn btn-success');
         $('input[type="reset"]').addClass('btn btn-danger');
         $('.image-cycle').cycle({fx: 'fadeZoom', speed: 1000, timeout: 5000});
-        $('.bxslider').bxSlider({randomStart: true,speed: 1000, pause:4000, auto: true});
+        $('.bxslider').bxSlider({randomStart: true,speed: 1000, pause:6000, auto: true});
     </script>
 
     <!-- Google Analytics -->
