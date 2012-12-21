@@ -298,14 +298,14 @@
         </div>
 
         <div class="row-fluid" tal:condition="isNavRoot" id="references-cycler">
-                <tal:loop repeat="chunk python: context.restrictedTraverse('@@getProjectReferences')(4)">
-                    <div class="span2 img-container image-cycle">
-                            <a tal:attributes="href ref/absolute_url" tal:repeat="ref chunk">
-                                <img tal:define="scale ref/@@images"
-                                     tal:replace="structure python: scale.scale('image', width=150, height=150).tag() "/>
-                            </a>
-                    </div>
-                </tal:loop>
+            <tal:loop repeat="chunk python: context.restrictedTraverse('@@getProjectReferences')(4)">
+                <div class="span2 img-container image-cycle">
+                    <a tal:attributes="href ref/absolute_url" tal:repeat="ref chunk">
+                        <img tal:define="scale ref/@@images"
+                             tal:replace="structure python: scale.scale('image', width=150, height=150).tag() "/>
+                    </a>
+                </div>
+            </tal:loop>
         </div>
 
 

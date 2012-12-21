@@ -573,88 +573,7 @@ table#memberships-vertical td {
     color: black;
 }
 
-
-/* this makes it possible to add next button beside scrollable */
-#scrollable-references {
-    float:left;
-}
-
-/* prev, next, prevPage and nextPage buttons */
-.scrollable a.browse {
-    background:url(../img/hori_large.png) no-repeat;
-    display:block;
-    width:30px;
-    height:30px;
-    float:left;
-    margin:40px 10px;
-    cursor:pointer;
-    font-size:1px;
-    margin-top: 60px;
-}
-
-/* right */
-.scrollable a.right { background-position: 0 -30px; clear:right; margin-right: 0px;}
-.scrollable a.right:hover { background-position:-30px -30px; }
-.scrollable a.right:active { background-position:-60px -30px; }
-
-
-/* left */
-.scrollable a.left { margin-left: 0px; }
-.scrollable a.left:hover  { background-position:-30px 0; }
-.scrollable a.left:active { background-position:-60px 0; }
-
-/* up and down */
-.scrollable a.up, 
-.scrollable a.down  {
-    background:url(../img/vert_large.png) no-repeat;
-    float: none;
-    margin: 10px 50px;
-}
-
-/* up */
-.scrollable a.up:hover { background-position:-30px 0; }
-.scrollable a.up:active { background-position:-60px 0; }
-
-/* down */
-.scrollable a.down { background-position: 0 -30px; }
-.scrollable a.down:hover { background-position:-30px -30px; }
-.scrollable a.down:active { background-position:-60px -30px; }
-
-
-/* disabled navigational button */
-.scrollable a.disabled {
-    visibility:hidden !important;
-}
-
-#scrollable-references {
-    position:relative;
-    overflow:hidden;
-    width: 950px;
-    height: 150px;
-}
-
-#scrollable-references .items {
-    /* this cannot be too large */
-    width:20000em;
-    position:absolute;
-    clear:both;
-}
-
-#scrollable-references .items div {
-    width:1000px;
-}
-
-#scrollable-references img {
-    background-color:#fff;
-    width:150px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-#scrollable-references .active {
-    position:relative;
-    cursor:default;
-}
+/* Image cycler on frontpage */
 
 #references-cycler .img-container {
     display: table-cell;
@@ -665,6 +584,8 @@ table#memberships-vertical td {
 
 #references-cycler .img-container img {
     vertical-align: middle;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 /* Project references */
@@ -677,19 +598,20 @@ table#memberships-vertical td {
     border: 1px dashed #eeeeee;
 }
 
-div.image-container
+#refCarousel div.image-container
 {
     position: relative;
     width: 150px;
     height: 150px;
 }
 
-div.image-container img
+#refCarousel div.image-container img
 {
     position: absolute;
     left: 0;
     top: 0;
 }
+
 /* Media queries ******************/
 @media only screen and (max-width: 767px) {
     .zopyx-slide .keyvisual-img {
