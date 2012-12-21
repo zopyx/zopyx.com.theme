@@ -71,9 +71,6 @@
              tal:condition="not: insideBlog"
               tal:attributes="href context/@@plone_portal_state/navigation_root_url"><img src="assets/img/zopyx-logo.png" class="img-rounded">
           </a>
-           <form id="global-nav-search" class="navbar-search pull-right" tal:attributes="action string:$nav_root_url/search">
-            <input type="text" class="search-query" placeholder="Suchen" name="SearchableText" />
-           </form>
           <div class="nav-collapse collapse" tal:condition="not: insideBlog">
             <ul class="nav" tal:define="navi context/@@getNavigation">
                  <li class="dropdown" 
@@ -95,6 +92,9 @@
                  </li>
               </ul>
           </div>
+           <form id="global-nav-search" class="navbar-search pull-right" tal:attributes="action string:$nav_root_url/search">
+            <input type="text" class="search-query" placeholder="Suchen" name="SearchableText" />
+           </form>
         </div>
       <div tal:condition="nothing" class="" style="border: 1px solid blue">
           <ul tal:define="breadcrumbs context/getBreadcrumbs" style="list-style-type: none">

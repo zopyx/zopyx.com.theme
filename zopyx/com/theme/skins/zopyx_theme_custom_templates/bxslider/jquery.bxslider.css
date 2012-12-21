@@ -30,18 +30,12 @@
 ===================================*/
 
 .bx-wrapper .bx-viewport {
-	-moz-box-shadow: 0 0 5px #ccc;
-	-webkit-box-shadow: 0 0 5px #ccc;
-	box-shadow: 0 0 5px #ccc;
-	border: solid #fff 5px;
 	left: -5px;
-	background: #fff;
 }
 
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
 	position: absolute;
-	bottom: -30px;
 	width: 100%;
 }
 
@@ -60,7 +54,7 @@
 	font-family: Arial;
 	font-weight: bold;
 	color: #666;
-	padding-top: 20px;
+	padding-top: 8px;
 }
 
 .bx-wrapper .bx-pager .bx-pager-item,

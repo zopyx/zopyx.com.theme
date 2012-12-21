@@ -153,15 +153,15 @@ color: #a8a9ad;
   opacity: 1;
   background: rgba(91,192,222,.8);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#b3000000',GradientType=0 ); /* IE6-8 */
-  top: 0px;
-  padding:12px;
+  top: 12px;
+  padding:10px;
 }
 .zopyx-slide .keyvisual-link {
   border-radius: 26px;
   box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
-  color: #fff;
+  color: #333;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-  border: 8px solid rgba(255,255,255,0.8);  
+  border: 6px solid rgba(255,255,255,0.8);  
   padding: 2px 20px 0px;
   line-height: 30px;
   width: 80px;
@@ -689,4 +689,63 @@ div.image-container img
     position: absolute;
     left: 0;
     top: 0;
+}
+/* Media queries ******************/
+@media only screen and (max-width: 767px) {
+    .zopyx-slide .keyvisual-img {
+    display:none;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .zopyx-slide h2 {
+        width: 45%;
+        padding:12px 20px;        
+        font-size: 16px;
+    }
+    .zopyx-slide p {
+        font-size: 16px;
+        padding:6px 20px 32px 20px;        
+        width: 45%;
+    }   
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .zopyx-slide h2 {
+        font-size: 16px;
+        width: 70%;
+        top: 50px;
+        padding: 18px 20px 18px 20px;
+        font-size: 16px;
+    }
+    
+    .zopyx-slide p { 
+        width: 70%;
+        top: 126px;
+        font-size: 16px;
+        padding: 18px 20px 18px 20px;
+    }
+
+    .zopyx-slide .keyvisual-img {
+    display:none;
+    }
+}
+@media only screen and (max-width: 479px) {
+    .zopyx-slide h2 {
+        font-size: 16px;
+        width: 80%;
+        top: 44px;
+        margin-left:22px;
+        padding: 18px 20px 18px 20px;
+        font-size: 16px;
+    }
+    .zopyx-slide p { 
+        width: 80%;
+        top: 100px;
+        margin-left:22px;
+        font-size: 12px;
+        padding: 18px 20px 18px 20px;
+    }
+    .bx-controls-direction,
+    .zopyx-slide .keyvisual-img {
+    display:none;
+    }
 }
