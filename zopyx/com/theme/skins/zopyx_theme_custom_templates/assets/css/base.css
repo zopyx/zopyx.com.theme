@@ -671,3 +671,13 @@ table#memberships-vertical td {
     display:none;
     }
 }
+
+
+/* fix ajung Navigation */
+.navbar .nav {
+    margin-bottom: 14px !important;
+}
+
+#global-nav-search {
+    display: none;
+}
