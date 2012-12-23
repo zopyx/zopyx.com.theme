@@ -749,3 +749,16 @@ div.image-container img
     display:none;
     }
 }
+
+/* References bxSlider */
+
+.portal-type-zopyx-policy-projectreference .bx-wrapper {
+    width: 500px !important;
+    margin: 0 auto !important;
+}
+
+.portal-type-zopyx-policy-projectreference  .caption {
+    margin-top: 2em;
+    text-align: center;
+}
+
