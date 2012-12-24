@@ -765,12 +765,10 @@ div.image-container img
 
 .portal-type-zopyx-policy-projectreference  .bx-prev {
     margin-left: -100px;
-    z-index: -999999 !important;
 }
 
 .portal-type-zopyx-policy-projectreference  .bx-next {
     margin-right: -100px;
-    z-index: -999999 !important;
 }
 
 .portal-type-zopyx-policy-projectreference  .bx-controls {
@@ -779,4 +777,13 @@ div.image-container img
 
 .portal-type-zopyx-policy-projectreference  .bx-controls {
     padding-bottom: 2em;
+}
+
+.portal-type-zopyx-policy-projectreference  .bx-default-pager a.active  {
+    background-color: rgb(171,171,19) !important;
+}
+
+
+.fancybox-overlay {
+    z-index: 9999 !important;
 }
