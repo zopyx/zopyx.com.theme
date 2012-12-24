@@ -765,10 +765,12 @@ div.image-container img
 
 .portal-type-zopyx-policy-projectreference  .bx-prev {
     margin-left: -100px;
+    z-index: -999999 !important;
 }
 
 .portal-type-zopyx-policy-projectreference  .bx-next {
     margin-right: -100px;
+    z-index: -999999 !important;
 }
 
 .portal-type-zopyx-policy-projectreference  .bx-controls {
