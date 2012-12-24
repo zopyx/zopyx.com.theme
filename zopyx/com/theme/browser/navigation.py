@@ -120,10 +120,10 @@ class Navigation(BrowserView):
 
     def getMainSlotCSS(self):
         if self.context.portal_type in ('Folder', 'zopyx.policy.projectreference', 
-                                        'zopyx.policy.youtube', 'zopyx.policy.slideshare'):
+                                        'zopyx.policy.person', 'zopyx.policy.youtube', 'zopyx.policy.slideshare'):
             return 'span12'
         return 'span8'
 
     def sideSlotVisible(self):
         return not self.context.portal_type in ('Folder', 'zopyx.policy.projectreference', 
-                                                'zopyx.policy.youtube', 'zopyx.policy.slideshare')
+                                                'zopyx.policy.person', 'zopyx.policy.youtube', 'zopyx.policy.slideshare')
