@@ -392,18 +392,48 @@
         $('.bxslider').bxSlider({randomStart: true,speed: 1000, pause:4000, auto: true});
         $('.bxslider1').bxSlider({randomStart: true,speed: 1000, pause:4000, auto: true});
 
+        // Resize iframe.slideshare on iPhone
+
+        $(function() {
+            var $slides= $('iframe.slideshare');
+            $slides.each(function() {
+                $(this)
+                    .data('aspectRatio', this.height / this.width)
+                    .removeAttr('height')
+                    .removeAttr('width');
+            });
+            // When the window is resized
+            // (You'll probably want to debounce this)
+            $(window).resize(function() {
+
+                $fluidEl = $(".media-item");
+                var newWidth = $fluidEl.width() *0.9;
+                
+                // Resize all videos according to their own aspect ratio
+                $slides.each(function() {
+
+                    var $el = $(this);
+                    $el.width(newWidth)
+                       .height(newWidth * $el.data('aspectRatio'));
+
+                });
+
+            // Kick off one resize to fix all videos on page load
+            }).resize();
+
+        });
+
+
         // Adjust iframe width for Youtube videos on small screen 
         $(function() {
 
             // Find all YouTube videos
             var $allVideos = $("iframe[src^='http://www.youtube.com']"),
-
                 // The element that is fluid width
                 $fluidEl = $(".media-item");
 
             // Figure out and save aspect ratio for each video
             $allVideos.each(function() {
-
                 $(this)
                     .data('aspectRatio', this.height / this.width)
                     
@@ -417,7 +447,7 @@
             // (You'll probably want to debounce this)
             $(window).resize(function() {
 
-                var newWidth = $fluidEl.width();
+                var newWidth = $fluidEl.width() * 0.9;
                 
                 // Resize all videos according to their own aspect ratio
                 $allVideos.each(function() {
