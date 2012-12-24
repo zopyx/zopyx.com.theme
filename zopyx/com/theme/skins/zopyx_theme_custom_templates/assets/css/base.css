@@ -755,6 +755,7 @@ div.image-container img
 .portal-type-zopyx-policy-projectreference .bx-wrapper {
     width: 500px !important;
     margin: 0 auto !important;
+    margin-top: 2em !important;
 }
 
 .portal-type-zopyx-policy-projectreference  .caption {
@@ -768,6 +769,10 @@ div.image-container img
 
 .portal-type-zopyx-policy-projectreference  .bx-next {
     margin-right: -100px;
+}
+
+.portal-type-zopyx-policy-projectreference  .bx-controls {
+    padding-bottom: 2em;
 }
 
 .portal-type-zopyx-policy-projectreference  .bx-controls {
