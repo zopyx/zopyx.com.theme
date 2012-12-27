@@ -68,8 +68,9 @@
           </a>
           <a class="brand" tal:condition="insideBlog" tal:attributes="href nav_root_url" style="color: white"><h1>Andreas Jung</h1></a>
           <a class="brand" 
+             id="brand-logo"
              tal:condition="not: insideBlog"
-              tal:attributes="href context/@@plone_portal_state/navigation_root_url"><img src="assets/img/zopyx-logo.png" class="img-rounded">
+             tal:attributes="href context/@@plone_portal_state/navigation_root_url"><img src="assets/img/zopyx-logo.png" class="img-rounded">
           </a>
           <div class="nav-collapse collapse" tal:condition="not: insideBlog">
             <ul class="nav" tal:define="navi context/@@getNavigation">
@@ -114,7 +115,7 @@
     </div>
     <div class="keyvisual" tal:condition="isNavRoot">
       <div class="container">
-        <div class="row-fluid">
+        <div class="row-fluid" id="slider-container">
           <div class="span12 welcome-image">
               <ul class="bxslider">
                   <li tal:repeat="img context/@@getRotatorImages"
@@ -299,11 +300,12 @@
 
         <div class="row-fluid" tal:condition="isNavRoot" id="references-cycler">
                 <tal:loop repeat="chunk python: context.restrictedTraverse('@@getProjectReferences')(4)">
-                    <div class="span2 img-container image-cycle">
-                            <a tal:attributes="href ref/absolute_url" tal:repeat="ref chunk">
-                                <img tal:define="scale ref/@@images"
-                                     tal:replace="structure python: scale.scale('image', width=150, height=150).tag() "/>
-                            </a>
+                    <div class="span2 img-container image-cycle"
+                         tal:attributes="id string:project-reference-${repeat/chunk/index}">
+                        <a tal:attributes="href ref/absolute_url" tal:repeat="ref chunk">
+                            <img tal:define="scale ref/@@images"
+                                 tal:replace="structure python: scale.scale('image', width=150, height=150).tag() "/>
+                        </a>
                     </div>
                 </tal:loop>
         </div>
@@ -388,9 +390,11 @@
         $('.readmore').readmore({substr_len: 250});
         $('input[type="submit"]').addClass('btn btn-success');
         $('input[type="reset"]').addClass('btn btn-danger');
-        $('.image-cycle').cycle({fx: 'fadeZoom', speed: 1000, timeout: 5000});
-        $('.bxslider').bxSlider({randomStart: true,speed: 1000, pause:4000, auto: true});
-        $('.bxslider1').bxSlider({randomStart: true,speed: 1000, pause:4000, auto: true});
+        if ($('body').width() > 640) {
+            $('.image-cycle').cycle({fx: 'fadeZoom', speed: 1000, timeout: 5000});
+            $('.bxslider').bxSlider({randomStart: true,speed: 1000, pause:4000, auto: true});
+            $('.bxslider1').bxSlider({randomStart: true,speed: 1000, pause:4000, auto: true});
+        }  
 
         // Resize iframe.slideshare on iPhone
 

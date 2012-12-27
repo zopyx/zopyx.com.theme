@@ -787,3 +787,29 @@ div.image-container img
 .fancybox-overlay {
     z-index: 9999 !important;
 }
+
+@media only screen and (max-device-width : 480px) {
+    #slider-container,
+    #ref-slider {
+        display:  none;
+    }
+    .keyvisual {
+        height: 0;
+    }
+    #brand-logo {
+        width: 100px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width : 768px) {
+    #project-reference-4,
+    #project-reference-5 {
+        display:  none !important;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width : 1024px) {
+    #project-reference-5 {
+        display:  none !important;
+    }
+}
