@@ -83,6 +83,7 @@
           <div class="nav-collapse collapse" tal:condition="not: insideAndreasJung">
             <ul class="nav" tal:define="navi context/@@getNavigation">
                  <li class="dropdown" 
+                     tal:attributes="id string:nav-${item/id}"
                      tal:repeat="item context/getNavigation">
                      <a class="dropdown-toggle" 
                          data-toggle="" 
