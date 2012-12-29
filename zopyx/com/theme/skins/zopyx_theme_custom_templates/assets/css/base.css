@@ -788,6 +788,23 @@ div.image-container img
     z-index: 9999 !important;
 }
 
+.wrapper {
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+.box {
+    margin: auto !important;
+    display: table-cell !important;
+    margin-right: 25px !important;
+    vertical-align: middle !important;
+    width: 150px !important;
+    height: 150px;
+    position: relative !important;
+    padding-right: 30px !important;
+}
+
+
 @media only screen and (max-device-width : 480px) {
     #slider-container,
     #ref-slider {
@@ -813,3 +830,4 @@ div.image-container img
         display:  none !important;
     }
 }
+

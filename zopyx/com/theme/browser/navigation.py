@@ -71,10 +71,12 @@ class Navigation(BrowserView):
 
     def getProjectReferences(self, chunk_size=4):
         brains = self.catalog(portal_type='zopyx.policy.projectreference')
-        refs = list()
-        for brain in brains:
-            refs.append(brain.getObject())
-        return list(chunks(refs, chunk_size))
+        result = list()
+        for i in range(0, chunk_size):
+            result.append([])
+        for i, brain in enumerate(brains):
+            result[i % chunk_size].append(brain.getObject())
+        return result
 
     def getProjectReferencesUnchunked(self):
         brains = self.catalog(portal_type='zopyx.policy.projectreference')
