@@ -5,7 +5,8 @@
         tal:define="portal_url context/@@plone_portal_state/portal_url;
                     navRoot context/getNavigationRoot;
                     nav_root_url context/@@plone_portal_state/navigation_root_url;
-                    insideBlog python: navRoot.getId() not in ('de', 'en');
+                    insideAndreasJung python: navRoot.getId() not in ('de', 'en');
+                    insideBlog python: insideAndreasJung and '/contents' in request.URL;
                     navroot_id navRoot/getId;
                     normalizeString nocall:context/@@plone/normalizeString;
                     isNavRoot context/@@isNavigationRoot">
@@ -66,13 +67,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" tal:condition="insideBlog" tal:attributes="href nav_root_url" style="color: white"><h1>Andreas Jung</h1></a>
+          <tal:if condition="insideAndreasJung">
+            <a class="brand" tal:condition="not: insideBlog" tal:attributes="href nav_root_url" style="color: white">
+              <h1>Andreas Jung</h1>
+            </a>
+            <a class="brand" tal:condition="insideBlog" tal:attributes="href string:$nav_root_url/contents" style="color: white">
+              <h1>Blog of Andreas Jung</h1>
+            </a>
+          </tal:if>
           <a class="brand" 
              id="brand-logo"
-             tal:condition="not: insideBlog"
+             tal:condition="not: insideAndreasJung"
              tal:attributes="href context/@@plone_portal_state/navigation_root_url"><img src="assets/img/zopyx-logo.png" class="img-rounded">
           </a>
-          <div class="nav-collapse collapse" tal:condition="not: insideBlog">
+          <div class="nav-collapse collapse" tal:condition="not: insideAndreasJung">
             <ul class="nav" tal:define="navi context/@@getNavigation">
                  <li class="dropdown" 
                      tal:repeat="item context/getNavigation">
@@ -297,17 +305,23 @@
               <h1>Referenzen <small>und Kundenstimmen</small></h1>
           </div>
         </div>
+        <!--
+        <div class="row-fluid" tal:condition="isNavRoot" style="vertical-align: center !important; height: 200px;width: 100%; display: table-cell">
+            <div style="position: relative;float: left; width: 200px; height: 200px; border: 1px solid red;padding-right: 1em">hello world</div>
 
+            <div style="position: relative;float: left; width: 100px; height: 100px; border: 1px solid blue">hello world</div>
+        </div>
+        -->
         <div class="row-fluid" tal:condition="isNavRoot" id="references-cycler">
-                <tal:loop repeat="chunk python: context.restrictedTraverse('@@getProjectReferences')(4)">
-                    <div class="span2 img-container image-cycle"
-                         tal:attributes="id string:project-reference-${repeat/chunk/index}">
-                        <a tal:attributes="href ref/absolute_url" tal:repeat="ref chunk">
-                            <img tal:define="scale ref/@@images"
-                                 tal:replace="structure python: scale.scale('image', width=150, height=150).tag() "/>
-                        </a>
-                    </div>
-                </tal:loop>
+            <tal:loop repeat="chunk python: context.restrictedTraverse('@@getProjectReferences')(4)">
+                <div class="span2 img-container image-cycle"
+                     tal:attributes="id string:project-reference-${repeat/chunk/index}">
+                    <a tal:attributes="href ref/absolute_url" tal:repeat="ref chunk">
+                        <img tal:define="scale ref/@@images"
+                             tal:replace="structure python: scale.scale('image', width=150, height=150).tag() "/>
+                    </a>
+                </div>
+            </tal:loop>
         </div>
 
 
@@ -318,7 +332,7 @@
       </section>
     </article>
     <!-- ----------------------------------- /Footer -->
-    <footer tal:condition="not: insideBlog">
+    <footer tal:condition="not: insideAndreasJung">
       <div class="container">
         <div class="row">
           <div class="span12">
@@ -384,6 +398,20 @@
     <script type="text/javascript" tal:attributes="src string:$portal_url/assets/js/olark.js"></script>
     <script type="text/javascript" tal:attributes="src string:$portal_url/cycle/jquery.cycle.js"></script>
     <script type="text/javascript" tal:attributes="src string:$portal_url/bxslider/jquery.bxslider.min.js"></script>
+
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'zopyx'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
 
     <script type="text/javascript">
         $('.carousel').carousel({interval: 6000});
