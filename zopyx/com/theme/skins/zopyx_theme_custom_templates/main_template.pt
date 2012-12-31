@@ -238,7 +238,7 @@
                         <div class="row-fluid">
 
                         <div class="mainnews">
-                            <h3>News</h3>
+                            <a href="aktuelles/news"><h3><i style="padding-right: 12px" class="icon-globe"></i>Aktuelle Nachrichten</h3></a>
                             <ul class="news-list">
                                 <li tal:repeat="item context/@@getNews">
                                   <div class="news-icon"><div class="img"><i class="icon-user"></i></div></div>
