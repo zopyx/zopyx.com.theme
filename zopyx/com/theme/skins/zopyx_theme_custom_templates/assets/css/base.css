@@ -803,6 +803,9 @@ div.image-container img
     padding-right: 30px !important;
 }
 
+table#impressum td {
+    vertical-align: top;
+}
 
 @media only screen and (max-device-width : 480px) {
     #slider-container,
