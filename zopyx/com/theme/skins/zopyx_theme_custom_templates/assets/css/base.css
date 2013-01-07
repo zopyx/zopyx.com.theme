@@ -807,6 +807,12 @@ table#impressum td {
     vertical-align: top;
 }
 
+table#andreas-jung-table td {
+    width: 50%;
+    padding-right: 1em;
+    vertical-align: top;
+}
+
 @media only screen and (max-device-width : 480px) {
     #slider-container,
     #ref-slider {
