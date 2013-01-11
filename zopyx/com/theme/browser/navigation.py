@@ -3,6 +3,7 @@ import random
 from zope.component import getMultiAdapter
 from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
+from plone.app.layout.navigation.defaultpage import isDefaultPage
 from plone.app.layout.navigation.root import getNavigationRootObject
 
 
@@ -138,3 +139,6 @@ class Navigation(BrowserView):
         breadcrumbs_view = getMultiAdapter((self.context, self.request),
                                            name='breadcrumbs_view')
         return breadcrumbs_view.breadcrumbs()
+
+    def isDefaultPage(self):
+        return isDefaultPage(self.context.aq_parent, self.context)

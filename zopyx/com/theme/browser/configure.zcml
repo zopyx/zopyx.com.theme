@@ -124,6 +124,13 @@
     permission="zope2.View"
   />
  
+  <browser:page 
+    for="*"
+    name="isDefaultPage"
+    class=".navigation.Navigation"
+    attribute="isDefaultPage"
+    permission="zope2.View"
+  />
  
  
 </configure>
