@@ -106,20 +106,6 @@
             <input type="text" class="search-query" placeholder="Suchen" name="SearchableText" />
            </form>
         </div>
-      <div tal:condition="nothing" class="" style="border: 1px solid blue">
-          <ul tal:define="breadcrumbs context/getBreadcrumbs" style="list-style-type: none">
-              <li style="display: inline">
-                  <a tal:attributes="href navRoot/absolute_url"
-                     tal:content="navRoot/Title" />
-                  <span class="divider">/</span>
-              </li>
-              <li tal:repeat="bc breadcrumbs" style="display: inline">
-                  <a tal:attributes="href bc/absolute_url"
-                      tal:content="bc/Title" />
-                  <span tal:condition="not: repeat/bc/end" class="divider">/</span>
-              </li>
-          </ul>
-      </div>
       </div>
     </div>
     <div class="keyvisual" tal:condition="isNavRoot">
@@ -148,7 +134,15 @@
 
         <!-- main -->
         <div class="container container-main" tal:condition="not: isNavRoot">
-            <div class="breadcrumbs-box">
+            <div class="breadcrumbs-box" tal:condition="not: insideAndreasJung">
+              <ul class="breadcrumb">
+                <li><a tal:attributes="href nav_root_url">Home</a><span class="divider">/</span></li>
+                <li tal:repeat="bc python: context.restrictedTraverse('@@breadcrumbs')()[:-1]">
+                  <a tal:attributes="href bc/absolute_url" tal:content="bc/Title" />
+                  <span class="divider">/</span> 
+                </li>
+                <li class="active" tal:content="context/Title" />
+            </ul> 
             </div>
             <div class="row-fluid">
 

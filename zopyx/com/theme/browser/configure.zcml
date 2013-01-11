@@ -116,6 +116,14 @@
     attribute="getMainSlotCSS"
     permission="zope2.View"
   />
+  <browser:page 
+    for="*"
+    name="breadcrumbs"
+    class=".navigation.Navigation"
+    attribute="breadcrumbs"
+    permission="zope2.View"
+  />
+ 
  
  
 </configure>

@@ -129,5 +129,12 @@ class Navigation(BrowserView):
         return 'span8'
 
     def sideSlotVisible(self):
-        return not self.context.portal_type in ('Folder', 'zopyx.policy.projectreference', 
+        return not self.context.portal_type in (
+                'Folder', 'zopyx.policy.projectreference', 
                                                 'zopyx.policy.person', 'zopyx.policy.youtube', 'zopyx.policy.slideshare')
+
+
+    def breadcrumbs(self):
+        breadcrumbs_view = getMultiAdapter((self.context, self.request),
+                                           name='breadcrumbs_view')
+        return breadcrumbs_view.breadcrumbs()
