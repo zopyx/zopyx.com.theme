@@ -60,7 +60,7 @@ class Navigation(BrowserView):
 
         nav_root = api.portal.get_navigation_root(self.context)
         brains = self.catalog(portal_type=('News Item',),
-                              path='/'.join(nav_root.getPhysicialPath()),
+                              path='/'.join(nav_root.getPhysicalPath()),
                               sort_on='created',
                               sort_order='descending')
         results = list()
