@@ -27,7 +27,7 @@ setup(name='zopyx.com.theme',
           'setuptools',
           'fanstatic',
           'z3c.jbot',
-          'plone.api'
+          'plone.api',
           'plone.transformchain'
           # -*- Extra requirements: -*-
       ],
