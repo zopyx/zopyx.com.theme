@@ -5,7 +5,7 @@
         tal:define="portal_url context/@@plone_portal_state/portal_url;
                     navRoot context/getNavigationRoot;
                     nav_root_url context/@@plone_portal_state/navigation_root_url;
-                    insideAndreasJung python: navRoot.getId() not in ('de', 'en');
+                    insideAndreasJung python: navRoot.getId() not in ('de', 'en', 'produce-and-publish-de');
                     insideBlog python: insideAndreasJung and '/contents' in request.URL;
                     navroot_id navRoot/getId;
                     normalizeString nocall:context/@@plone/normalizeString;
