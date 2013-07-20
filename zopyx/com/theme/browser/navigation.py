@@ -1,5 +1,5 @@
 import random
-
+from plone import api
 from zope.component import getMultiAdapter
 from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
@@ -58,9 +58,11 @@ class Navigation(BrowserView):
 
     def getNews(self, num_items=3):
 
+        nav_root = api.portal.get_navigation_root(self.context)
         brains = self.catalog(portal_type=('News Item',),
-                         sort_on='created',
-                         sort_order='descending')
+                              path='/'.join(nav_root.getPhysicialPath()),
+                              sort_on='created',
+                              sort_order='descending')
         results = list()
         for brain in brains:
             if 'BlogItem' in brain.Subject:
