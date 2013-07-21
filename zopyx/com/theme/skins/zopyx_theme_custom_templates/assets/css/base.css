@@ -360,8 +360,9 @@ table#memberships-vertical td {
 }
 
 .documentDescription {
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 1em;
+    line-height: 1.2em;
 }
 
 /* Blog */
@@ -842,17 +843,31 @@ table#andreas-jung-table td {
     }
 }
 
+a.email-link:hover,
+a.email-link {
+    color: rgb(51,51,51);
+}
+
+
 /* Product & Publish */
-.section-produce-and-publish-de table {
+.context-konverteroptionen table,
+.context-vergleich-mit-anderen-loesungen table {
     border: 1px solid #ddd;    
     width: 100%;
     font-size: 1em;
 }
 
-.section-produce-and-publish-de table td {
+.context-konverteroptionen table td,
+.context-vergleich-mit-anderen-loesungen table td {
     border: 1px solid #ddd;    
     padding: 0.25em;
     padding-right: 1em;
     min-width: 150px;
     vertical-align: top;
 }
+
+.section-produce-and-publish-de .tags {
+    display: none;
+}
+
+
