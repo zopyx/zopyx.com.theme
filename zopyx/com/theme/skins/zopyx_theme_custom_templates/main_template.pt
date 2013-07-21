@@ -363,7 +363,7 @@
                   <h5>&nbsp;</h5>
                   <abbr title="Telefon">T:</abbr> +49-7071/13841040<br/>
                   <abbr title="Fax">F:</abbr> +49-7071/13841049<br/>
-                  <abbr title="Email">E:</abbr> <a href="mailto:info@zopyx.com">info@zopyx.com</a>
+                  <abbr title="Email">E:</abbr> <a class="email-link" href="mailto:info@zopyx.com">info@zopyx.com</a>
               </div>
 <!-- social icons -->
                <div class="span4 social-icons">
