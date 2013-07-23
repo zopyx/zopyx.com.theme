@@ -885,3 +885,8 @@ a.email-link {
 .context-produce-publish-testen table img {
     max-width: 200px !important;
 }
+
+.zopyx-page .download {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
