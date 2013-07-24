@@ -908,3 +908,18 @@ a.email-link {
     vertical-align: top;
     text-align: left;
 }
+
+#demos-view  .demo-content h2 {
+    line-height: 1em; 
+    margin-bottom: 0.5em;
+}
+
+#demos-view  .demo-content .description {
+    line-height: 1.4em; 
+    margin-bottom: 1em;
+}
+
+#demos-view  .demo-content .download {
+    line-height: 1em; 
+    margin-bottom: 2em;
+}
