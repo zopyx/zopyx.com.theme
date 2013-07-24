@@ -875,7 +875,6 @@ a.email-link {
     padding-right: 1em;
     min-width: 150px;
     vertical-align: top;
-    font-size: 0.8em;
 }
 
 .context-produce-publish-testen table h3 {
@@ -912,14 +911,21 @@ a.email-link {
 #demos-view  .demo-content h2 {
     line-height: 1em; 
     margin-bottom: 0.5em;
+    margin-top: 0;
 }
 
 #demos-view  .demo-content .description {
     line-height: 1.4em; 
     margin-bottom: 1em;
+    font-size: 1.0em;
+    font-weight: bold;
 }
 
 #demos-view  .demo-content .download {
     line-height: 1em; 
     margin-bottom: 2em;
+}
+
+table h2 {
+    margin-top: 0;
 }
