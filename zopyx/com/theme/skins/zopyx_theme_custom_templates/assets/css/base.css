@@ -890,3 +890,21 @@ a.email-link {
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
+.context-pdf-converter-demos table {
+    border: 0px solid #ddd;    
+    width: 100%;
+    font-size: 1em;
+}
+
+.context-pdf-converter-demos th {
+    text-align: left;
+}
+
+.context-pdf-converter-demos td {
+    width: 33%;
+    margin-right: 2em;
+    padding-right: 2em;
+    vertical-align: top;
+    text-align: left;
+}
