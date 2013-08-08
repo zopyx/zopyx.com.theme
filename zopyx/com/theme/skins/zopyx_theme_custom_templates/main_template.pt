@@ -427,6 +427,7 @@
             $('.image-cycle').cycle({fx: 'fadeZoom', speed: 1000, timeout: 5000});
             $('.bxslider').bxSlider({randomStart: true,speed: 1000, pause:4000, auto: true});
             $('.bxslider1').bxSlider({randomStart: true,speed: 1000, pause:4000, auto: true});
+            $('.bxslider-pp').bxSlider({randomStart: false, mode: 'fade', speed: 1000, pause:4000, auto: true});
         }  
 
         // Resize iframe.fluid (Slideshare, YouTube integration)
