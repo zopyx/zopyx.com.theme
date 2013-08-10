@@ -150,7 +150,9 @@
             </ul> 
             </div>
             <div class="row-fluid">
-
+                <div metal:define-slot="widebody"></div>
+            </div>
+            <div class="row-fluid">
                 <div class="span8" tal:attributes="class context/@@getMainSlotCSS">
                     <metal:slot define-slot="body">
                     <div id="content">
@@ -427,7 +429,7 @@
             $('.image-cycle').cycle({fx: 'fadeZoom', speed: 1000, timeout: 5000});
             $('.bxslider').bxSlider({randomStart: true,speed: 1000, pause:4000, auto: true});
             $('.bxslider1').bxSlider({randomStart: true,speed: 1000, pause:4000, auto: true});
-            $('.bxslider-pp').bxSlider({randomStart: false, mode: 'fade', speed: 1000, pause:4000, auto: true});
+            $('.bxslider-pp').bxSlider({randomStart: false, mode: 'fade', speed: 1000, pause:7000, auto: true, infiniteLoop: true, controls: false});
         }  
 
         // Resize iframe.fluid (Slideshare, YouTube integration)

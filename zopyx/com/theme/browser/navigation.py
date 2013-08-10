@@ -52,7 +52,6 @@ class Navigation(BrowserView):
                                     id=folder.getId(),
                                     url=folder.absolute_url(),
                                     children=children))
-
         return entries                                                                             
 
 
