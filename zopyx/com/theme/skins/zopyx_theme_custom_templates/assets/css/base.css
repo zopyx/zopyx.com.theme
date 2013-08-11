@@ -929,3 +929,8 @@ a.email-link {
 table h2 {
     margin-top: 0;
 }
+
+.context-dms-expo-2013-landingpage .breadcrumbs-box,
+.context-slider-frontpage .breadcrumbs-box {
+    display: none;
+} 
