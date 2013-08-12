@@ -112,7 +112,7 @@ class Navigation(BrowserView):
         return None
 
     def getFrontpageSlots(self):
-        return self.context.getFolderContents({'portal_type' : 'zopyx.policy.frontpageslot'}, full_objects=True)[:2]
+        return self.getNavigationRoot().getFolderContents({'portal_type' : 'zopyx.policy.frontpageslot'}, full_objects=True)[:2]
 
 
     def getBreadcrumbs(self):

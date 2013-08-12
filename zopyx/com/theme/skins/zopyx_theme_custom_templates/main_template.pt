@@ -9,7 +9,7 @@
                     insideBlog python: insideAndreasJung and '/contents' in request.URL;
                     navroot_id navRoot/getId;
                     normalizeString nocall:context/@@plone/normalizeString;
-                    isNavRoot context/@@isNavigationRoot">
+                    isNavRoot python:context.restrictedTraverse('@@isNavigationRoot')() or context.getId() == 'landingpage-default'">
   <head>
     <meta charset="utf-8">
     <title tal:content="string: ${context/Title}- ${navRoot/Title} - ZOPYX" />
