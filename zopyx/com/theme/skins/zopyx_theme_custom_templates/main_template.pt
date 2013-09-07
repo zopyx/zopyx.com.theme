@@ -403,22 +403,23 @@
     <script type="text/javascript" tal:attributes="src string:$portal_url/readmore/jquery.readmore.min.js"></script>
     <script type="text/javascript" tal:attributes="src string:$portal_url/isotope/jquery.isotope.js"></script>
     <script type="text/javascript" tal:attributes="src string:$portal_url/assets/js/olark.js"></script>
+    <script type="text/javascript" tal:attributes="src string:$portal_url/hyphenator/hyphenate.js"></script>
     <script type="text/javascript" tal:attributes="src string:$portal_url/cycle/jquery.cycle.js"></script>
     <script type="text/javascript" tal:attributes="src string:$portal_url/bxslider/jquery.bxslider.min.js"></script>
 
 
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'zopyx'; // required: replace example with your forum shortname
+    <script type="text/javascript" tal:condition="nothing">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'zopyx'; // required: replace example with your forum shortname
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
 
     <script type="text/javascript">
         $('.carousel').carousel({interval: 6000});
@@ -431,6 +432,14 @@
             $('.bxslider1').bxSlider({randomStart: true,speed: 1000, pause:4000, auto: true});
             $('.bxslider-pp').bxSlider({randomStart: false, mode: 'fade', speed: 1000, pause:7000, auto: true, infiniteLoop: true, controls: false});
         }  
+
+        Hyphenator.config({
+            displaytogglebox : true,
+            minwordlength : 4,
+            defaultlanguage: 'de',
+            classname: 'content'
+        });
+        Hyphenator.run();
 
         // Resize iframe.fluid (Slideshare, YouTube integration)
         $(function() {
