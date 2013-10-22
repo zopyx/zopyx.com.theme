@@ -850,6 +850,7 @@ a.email-link {
 
 
 /* Product & Publish */
+.context-produce-publish-cloud-services table td,
 .context-konverteroptionen table,
 .context-vergleich-mit-anderen-loesungen table {
     border: 1px solid #ddd;    
@@ -857,6 +858,7 @@ a.email-link {
     font-size: 1em;
 }
 
+.context-produce-publish-cloud-services table td,
 .context-konverteroptionen table td,
 .context-vergleich-mit-anderen-loesungen table td {
     border: 1px solid #ddd;    
@@ -889,6 +891,7 @@ a.email-link {
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
 
 .context-pdf-converter-demos table {
     border: 0px solid #ddd;    

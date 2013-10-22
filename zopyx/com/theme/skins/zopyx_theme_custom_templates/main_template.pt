@@ -6,6 +6,7 @@
                     navRoot context/getNavigationRoot;
                     nav_root_url context/@@plone_portal_state/navigation_root_url;
                     insideAndreasJung python: navRoot.getId() not in ('de', 'en', 'produce-and-publish-de');
+                    insidePP python: navRoot.getId() in ('produce-and-publish-de', );
                     insideBlog python: insideAndreasJung and '/contents' in request.URL;
                     navroot_id navRoot/getId;
                     normalizeString nocall:context/@@plone/normalizeString;
@@ -472,10 +473,25 @@
     </script>
 
     <!-- Google Analytics -->
-    <script type="text/javascript">
+    <script type="text/javascript" tal:condition="not: insidePP">
 
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-65716-16']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+    <script type="text/javascript" tal:condition="insidePP">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-65716-11']);
+      _gaq.push(['_setDomainName', 'produce-and-publish.com']);
       _gaq.push(['_trackPageview']);
 
       (function() {
