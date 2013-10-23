@@ -491,7 +491,7 @@
 
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-65716-11']);
-      _gaq.push(['_setDomainName', 'produce-and-publish.com']);
+      _gaq.push(['_setDomainName', 'produce-and-publish.info']);
       _gaq.push(['_trackPageview']);
 
       (function() {
