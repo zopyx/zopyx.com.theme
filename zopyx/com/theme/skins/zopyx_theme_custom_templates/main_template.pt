@@ -10,6 +10,7 @@
                     insideBlog python: insideAndreasJung and '/contents' in request.URL;
                     navroot_id navRoot/getId;
                     normalizeString nocall:context/@@plone/normalizeString;
+                    language python: navRoot.getId() in ('de', 'produce-and-publish-de') and 'de' or 'en'; 
                     isNavRoot python:context.restrictedTraverse('@@isNavigationRoot')() or context.getId() == 'landingpage-default'">
   <head>
     <meta charset="utf-8">
@@ -341,7 +342,53 @@
     </article>
     <!-- ----------------------------------- /Footer -->
     <footer tal:condition="not: insideAndreasJung">
-      <div class="container">
+      <div class="container" tal:condition="python: language == 'en'">
+        <div class="row">
+          <div class="span12">
+            <div class="row">
+<!-- logo -->  
+              <div class="span2" id="footer-linklist">
+                <h5>Misc</h5>
+                <ul>
+                    <li><i class="icon-chevron-right"></i><a tal:attributes="href string:$nav_root_url/imprint">Imprint</a>
+                    <li><i class="icon-chevron-right"></i><a tal:attributes="href string:http://www.zopyx.com">zopyx.de (German)</a>
+                    </ul>
+              </div>
+<!-- address -->            
+              <div class="span2">
+                <h5>Contact</h5>
+                 <address>
+                  <strong>ZOPYX Limited</strong><br>
+                  Hundskapfklinge 33<br>
+                  D-72074 Tübingen<br>
+                </address>
+              </div>
+              <div class="span4">
+                  <h5>&nbsp;</h5>
+                  <abbr title="Phone">T:</abbr> +49-7071/13841040<br/>
+                  <abbr title="Fax">F:</abbr> +49-7071/13841049<br/>
+                  <abbr title="Email">E:</abbr> <a class="email-link" href="mailto:info@zopyx.com">info@zopyx.com</a>
+              </div>
+<!-- social icons -->
+               <div class="span4 social-icons">
+                    <h5>Stay in touch</h5>
+                    <ul class="nav nav-pills">
+                    <li>
+                    <a class="twitter" href="http://twitter.com/ZOPYXLimited" title="Follow @ZOPYX on Twitter">
+                    <i class="icon-twitter"></i></a></li>
+                    <li>
+                        <a class="facebook" href="https://www.facebook.com/pages/Zopyx-Ltd/256178107747837" title="Follow @ZOPYX on Facebook">
+                    <i class="icon-facebook"></i></a></li>
+                    <li>
+                    <a class="googleplus" href="https://plus.google.com/u/0/103018428167991862768/posts" title="Follow @ZOPYX on Google+">
+                    <i class="icon-google-plus"></i></a></li>
+                    <ul>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container" tal:condition="python: language == 'de'">
         <div class="row">
           <div class="span12">
             <div class="row">
