@@ -5,8 +5,8 @@
         tal:define="portal_url context/@@plone_portal_state/portal_url;
                     navRoot context/getNavigationRoot;
                     nav_root_url context/@@plone_portal_state/navigation_root_url;
-                    insideAndreasJung python: navRoot.getId() not in ('de', 'en', 'produce-and-publish-de');
-                    insidePP python: navRoot.getId() in ('produce-and-publish-de', );
+                    insideAndreasJung python: navRoot.getId() not in ('de', 'en', 'produce-and-publish-de','produce-and-publish-en');
+                    insidePP python: navRoot.getId() in ('produce-and-publish-de', 'produce-and-publish-en');
                     insideBlog python: insideAndreasJung and '/contents' in request.URL;
                     navroot_id navRoot/getId;
                     normalizeString nocall:context/@@plone/normalizeString;
