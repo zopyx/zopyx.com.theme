@@ -480,7 +480,7 @@
             $('.bxslider1').bxSlider({randomStart: true,speed: 1000, pause:4000, auto: true});
             $('.bxslider-pp').bxSlider({randomStart: false, mode: 'fade', speed: 1000, pause:7000, auto: true, infiniteLoop: true, controls: false});
         }  
-
+        /*
         Hyphenator.config({
             displaytogglebox : true,
             minwordlength : 4,
@@ -488,6 +488,7 @@
             classname: 'content'
         });
         Hyphenator.run();
+        */
 
         // Resize iframe.fluid (Slideshare, YouTube integration)
         $(function() {
