@@ -851,7 +851,9 @@ a.email-link {
 
 /* Product & Publish */
 .context-produce-publish-cloud-services table td,
+.context-converter-options table,
 .context-konverteroptionen table,
+.context-comparison-with-other-solutions table,
 .context-vergleich-mit-anderen-loesungen table {
     border: 1px solid #ddd;    
     width: 100%;
@@ -859,7 +861,9 @@ a.email-link {
 }
 
 .context-produce-publish-cloud-services table td,
+.context-converter-options table td,
 .context-konverteroptionen table td,
+.context-comparison-with-other-solutions table td,
 .context-vergleich-mit-anderen-loesungen table td {
     border: 1px solid #ddd;    
     padding: 0.25em;
