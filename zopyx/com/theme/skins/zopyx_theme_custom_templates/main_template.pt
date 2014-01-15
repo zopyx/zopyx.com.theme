@@ -105,7 +105,8 @@
               </ul>
           </div>
            <form id="global-nav-search" class="navbar-search pull-right" tal:attributes="action string:$nav_root_url/search">
-            <input type="text" class="search-query" placeholder="Suchen" name="SearchableText" />
+            <input type="text" class="search-query" tal:condition="python: language=='de'" placeholder="Suchen" name="SearchableText" />
+            <input type="text" class="search-query" tal:condition="python: language=='en'" placeholder="Search" name="SearchableText" />
            </form>
         </div>
       </div>
