@@ -353,7 +353,7 @@
                 <ul>
                     <li><i class="icon-chevron-right"></i><a tal:attributes="href string:$nav_root_url/imprint">Imprint</a>
                     <li><i class="icon-chevron-right"></i><a tal:attributes="href string:http://www.produce-and-publish.de">Produce &amp; Publish (DE)</a>
-                    <li><i class="icon-chevron-right"></i><a tal:attributes="href string:http://www.zopyx.com">zopyx.de (German)</a>
+                    <li><i class="icon-chevron-right"></i><a tal:attributes="href string:http://www.zopyx.com">zopyx.de (DE)</a>
                     </ul>
               </div>
 <!-- address -->            
@@ -400,7 +400,7 @@
                 <ul>
                     <li><i class="icon-chevron-right"></i><a tal:attributes="href string:$nav_root_url/impressum">Impressum</a>
                     <li><i class="icon-chevron-right"></i><a tal:attributes="href string:http://www.produce-and-publish.com">Produce &amp; Publish (EN)</a>
-                    <li><i class="icon-chevron-right"></i><a tal:attributes="href string:http://www.zopyx.com">zopyx.com (English)</a>
+                    <li><i class="icon-chevron-right"></i><a tal:attributes="href string:http://www.zopyx.com">zopyx.com (EN)</a>
                     </ul>
               </div>
 <!-- address -->            
