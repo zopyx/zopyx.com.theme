@@ -872,6 +872,7 @@ a.email-link {
     display: none;
 }
 
+.context-testing-produce-publish table td,
 .context-produce-publish-testen table td {
     padding: 0.25em;
     padding-right: 1em;
@@ -879,10 +880,12 @@ a.email-link {
     vertical-align: top;
 }
 
+.context-testing-produce-publish table h3,
 .context-produce-publish-testen table h3 {
     line-height: 0;
 }
 
+.context-testing-produce-publish table img,
 .context-produce-publish-testen table img {
     max-width: 200px !important;
 }
