@@ -352,6 +352,7 @@
                 <h5>Misc</h5>
                 <ul>
                     <li><i class="icon-chevron-right"></i><a tal:attributes="href string:$nav_root_url/imprint">Imprint</a>
+                    <li><i class="icon-chevron-right"></i><a tal:attributes="href string:http://www.produce-and-publish.de">Produce &amp; Publish (DE)</a>
                     <li><i class="icon-chevron-right"></i><a tal:attributes="href string:http://www.zopyx.com">zopyx.de (German)</a>
                     </ul>
               </div>
@@ -398,6 +399,7 @@
                 <h5>Verschiedenes</h5>
                 <ul>
                     <li><i class="icon-chevron-right"></i><a tal:attributes="href string:$nav_root_url/impressum">Impressum</a>
+                    <li><i class="icon-chevron-right"></i><a tal:attributes="href string:http://www.produce-and-publish.com">Produce &amp; Publish (EN)</a>
                     <li><i class="icon-chevron-right"></i><a tal:attributes="href string:http://www.zopyx.com">zopyx.com (English)</a>
                     </ul>
               </div>
@@ -439,7 +441,7 @@
         <div class="container">
           <div class="row">
             <div class="span12" style="text-align: center">
-              <p>© 2013, ZOPYX Limited, All Rights reserved</p>
+              <p>&copy; 2014, ZOPYX Limited, All Rights reserved</p>
             </div>
           </div>
         </div>
