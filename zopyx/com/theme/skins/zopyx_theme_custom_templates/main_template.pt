@@ -29,8 +29,8 @@
     <link rel="stylesheet" tal:attributes="href string:$portal_url/assets/css/font-awesome.css">
 
     <!-- fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet/less" type="text/css" tal:attributes="href string:$portal_url/assets/less/bootstrap.less"/>
     <script tal:attributes="src string:$portal_url/assets/js/less-1.3.1.min.js" type="text/javascript"></script>
@@ -48,7 +48,6 @@
 
     <link rel="stylesheet" tal:attributes="href string:$portal_url/assets/css/base.css" >
     <link rel="stylesheet" tal:attributes="href string:$portal_url/bxslider/jquery.bxslider.css" >
-    <script type="text/javascript" src="http://jira.veit-schiele.de/s/en_UK4apz3h/782/24/1.2.5/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?collectorId=1340b083"></script>
 
 
     <!-- Plone compatibility -->
@@ -120,7 +119,8 @@
                        tal:attributes="class python: 'item zopyx-slide ' + (repeat['img'].start and 'active' or '')">
                        <h2 tal:content="img/Title"/>
                        <p tal:content="img/Description"/>
-                       <a tal:attributes="href img/target/to_object/absolute_url" class="keyvisual-link">Weiter lesen...</a>
+                       <a tal:condition="python: language=='de'" tal:attributes="href img/target/to_object/absolute_url" class="keyvisual-link">Weiter lesen...</a>
+                       <a tal:condition="python: language=='en'" tal:attributes="href img/target/to_object/absolute_url" class="keyvisual-link">Read more...</a>
                        <div class="keyvisual-img">
                            <img tal:define="scale img/@@images"
                                 tal:replace="structure python: scale.scale('image', width=360, height=230).tag()" 
@@ -241,8 +241,9 @@
                     <div class="span4">                      
                         <div class="row-fluid">
 
-                        <div class="mainnews">
-                            <a href="aktuelles/news"><h3><i style="padding-right: 12px" class="icon-globe"></i>Aktuelle Nachrichten</h3></a>
+                        <div class="mainnews" tal:condition="context/@@getNews">
+                            <a tal:condition="python: language == 'de'" href="aktuelles/news"><h3><i style="padding-right: 12px" class="icon-globe"></i>Aktuelle Nachrichten</h3></a>
+                            <a tal:condition="python: language == 'en'" href="aktuelles/news"><h3><i style="padding-right: 12px" class="icon-globe"></i>News</h3></a>
                             <ul class="news-list">
                                 <li tal:repeat="item context/@@getNews">
                                   <div class="news-icon"><div class="img"><i class="icon-user"></i></div></div>
@@ -309,7 +310,8 @@
         <div class="row-fluid" id="ref-slider" tal:condition="isNavRoot">
           <div class="span12 welcome-image">
             <div class="page-header">
-              <h1>Referenzen <small>und Kundenstimmen</small></h1>
+              <h1 tal:condition="python: language == 'de'">Referenzen <small>und Kundenstimmen</small></h1>
+              <h1 tal:condition="python: language == 'en'">References <small>and testimonials</small></h1>
           </div>
         </div>
 
@@ -450,7 +452,7 @@
 
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://cdn.jquerytools.org/1.2.7/all/jquery.tools.min.js"></script>
+    <script type="text/javascript" tal:attributes="src string:$portal_url/jquerytools/jquery.tools.min.js"></script>
     <script type="text/javascript" tal:attributes="src string:$portal_url/readmore/jquery.readmore.min.js"></script>
     <script type="text/javascript" tal:attributes="src string:$portal_url/isotope/jquery.isotope.js"></script>
     <script type="text/javascript" tal:attributes="src string:$portal_url/assets/js/olark.js"></script>
@@ -554,7 +556,6 @@
     </script>
 
     <!-- JIRA -->
-    <script type="text/javascript" src="http://jira.veit-schiele.de/s/en_UK4apz3h/782/24/1.2.5/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?collectorId=1340b083"></script>
 
     <!-- Jira feedback collector -->
     <metal:slot define-slot="javascript_head_slot">

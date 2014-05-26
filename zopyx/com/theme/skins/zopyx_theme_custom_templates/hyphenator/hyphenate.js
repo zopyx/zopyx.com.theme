@@ -177,7 +177,7 @@ var Hyphenator = (function (window) {
 				return src.substring(0, p);
 			}
 		}
-		return 'http://hyphenator.googlecode.com/svn/trunk/';
+		return 'https://hyphenator.googlecode.com/svn/trunk/';
 	}()),
 
 	/**
