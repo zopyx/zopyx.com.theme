@@ -59,7 +59,7 @@ class Navigation(BrowserView):
 
         nav_root = api.portal.get_navigation_root(self.context)
         brains = self.catalog(portal_type=('News Item',),
-                              path='/'.join(nav_root.getPhysicalPath()),
+                              path='/'.join(self.navroot.getPhysicalPath()),
                               sort_on='created',
                               sort_order='descending')
         results = list()
@@ -67,6 +67,7 @@ class Navigation(BrowserView):
             if 'BlogItem' in brain.Subject:
                 continue
             results.append(dict(created=brain.created.strftime('%d.%m.%Y'),
+                                path='/'.join(self.navroot.getPhysicalPath()),
                                 url=brain.getURL(),
                                 description=brain.Description,
                                 title=brain.Title,
@@ -74,7 +75,8 @@ class Navigation(BrowserView):
         return results[:num_items]
 
     def getProjectReferences(self, chunk_size=4):
-        brains = self.catalog(portal_type='zopyx.policy.projectreference')
+        brains = self.catalog(portal_type='zopyx.policy.projectreference',
+                              path='/'.join(self.navroot.getPhysicalPath()))
         result = list()
         for i in range(0, chunk_size):
             result.append([])
@@ -83,7 +85,8 @@ class Navigation(BrowserView):
         return result
 
     def getProjectReferencesUnchunked(self):
-        brains = self.catalog(portal_type='zopyx.policy.projectreference')
+        brains = self.catalog(portal_type='zopyx.policy.projectreference',
+                              path='/'.join(self.navroot.getPhysicalPath()))
         refs = list()
         for brain in brains:
             refs.append(brain.getObject())
@@ -91,7 +94,8 @@ class Navigation(BrowserView):
         return refs
     
     def getRotatorImages(self, chunk_size=4):
-        brains = self.catalog(portal_type='zopyx.policy.rotatorimage')
+        brains = self.catalog(portal_type='zopyx.policy.rotatorimage',
+                              path='/'.join(self.navroot.getPhysicalPath()))
         images = list()
         for brain in brains:
             images.append(brain.getObject())
