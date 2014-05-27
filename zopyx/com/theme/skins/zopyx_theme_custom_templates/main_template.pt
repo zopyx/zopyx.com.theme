@@ -361,7 +361,7 @@
                 <ul>
                     <li><i class="icon-chevron-right"></i><a tal:attributes="href string:$nav_root_url/imprint">Imprint</a>
                     <li><i class="icon-chevron-right"></i><a tal:attributes="href string:http://www.produce-and-publish.de">Produce &amp; Publish (DE)</a>
-                    <li><i class="icon-chevron-right"></i><a tal:attributes="href string:http://www.zopyx.com">zopyx.de (DE)</a>
+                    <li><i class="icon-chevron-right"></i><a tal:attributes="href string:http://www.zopyx.de">zopyx.de (DE)</a>
                     </ul>
               </div>
 <!-- address -->            
