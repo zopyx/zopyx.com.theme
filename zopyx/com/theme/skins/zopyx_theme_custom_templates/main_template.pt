@@ -7,6 +7,7 @@
                     nav_root_url context/@@plone_portal_state/navigation_root_url;
                     insideAndreasJung python: navRoot.getId() not in ('de', 'en', 'produce-and-publish-de','produce-and-publish-en');
                     insidePP python: navRoot.getId() in ('produce-and-publish-de', 'produce-and-publish-en');
+                    insideZOPYX python: navRoot.getId() in ('de', 'en');
                     insideBlog python: insideAndreasJung and '/contents' in request.URL;
                     navroot_id navRoot/getId;
                     normalizeString nocall:context/@@plone/normalizeString;
@@ -78,8 +79,13 @@
           </tal:if>
           <a class="brand" 
              id="brand-logo"
-             tal:condition="not: insideAndreasJung"
+             tal:condition="insideZOPYX"
              tal:attributes="href context/@@plone_portal_state/navigation_root_url"><img src="assets/img/zopyx-logo.png" class="img-rounded">
+          </a>
+          <a class="brand" 
+             id="brand-logo"
+             tal:condition="insidePP"
+             tal:attributes="href context/@@plone_portal_state/navigation_root_url"><img src="assets/img/producepublish-logo.png" class="img-rounded">
           </a>
           <div class="nav-collapse collapse" tal:condition="not: insideAndreasJung">
             <ul class="nav" tal:define="navi context/@@getNavigation">
