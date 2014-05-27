@@ -944,3 +944,7 @@ table h2 {
 .context-slider-frontpage .breadcrumbs-box {
     display: none;
 } 
+
+.searchResults img {
+    display: none;
+}
