@@ -948,3 +948,7 @@ table h2 {
 .searchResults img {
     display: none;
 }
+
+.newsImage {
+    margin-bottom: 2em;
+}
