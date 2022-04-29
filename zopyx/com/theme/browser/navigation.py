@@ -27,19 +27,19 @@ class Navigation(BrowserView):
     def getNavigation(self):
         """ Return data structure for rendering the main menu """
 
-        entries = list()
+        entries = []
         folders = self.navroot.getFolderContents({'is_folderish' : True}, full_objects=True)
         folders = [f for f in folders if not f.getExcludeFromNav()]
-        
+
         for folder in folders:
-            children = list()
+            children = []
             exclude_subcontent = folder.getField('excludeSubcontentFromNavigation').get(folder)
             use_vertical = folder.getField('useVerticalNavigation').get(folder)
             if not exclude_subcontent:
                 for brain in folder.getFolderContents({'portal_type' : ('Folder', 'zopyx.policy.page')}):
                     url = brain.getURL()
                     if use_vertical:
-                        url = '%s/foldervertical_view#%s' % (folder.absolute_url(), brain.getId)
+                        url = f'{folder.absolute_url()}/foldervertical_view#{brain.getId}'
                     children.append(dict(title=brain.Title, url=url, id=brain.getId))
 
             if len(children) == 1:
@@ -62,24 +62,24 @@ class Navigation(BrowserView):
                               path='/'.join(self.navroot.getPhysicalPath()),
                               sort_on='created',
                               sort_order='descending')
-        results = list()
-        for brain in brains:
-            if 'BlogItem' in brain.Subject:
-                continue
-            results.append(dict(created=brain.created.strftime('%d.%m.%Y'),
-                                path='/'.join(self.navroot.getPhysicalPath()),
-                                url=brain.getURL(),
-                                description=brain.Description,
-                                title=brain.Title,
-                            ))
+        results = [
+            dict(
+                created=brain.created.strftime('%d.%m.%Y'),
+                path='/'.join(self.navroot.getPhysicalPath()),
+                url=brain.getURL(),
+                description=brain.Description,
+                title=brain.Title,
+            )
+            for brain in brains
+            if 'BlogItem' not in brain.Subject
+        ]
+
         return results[:num_items]
 
     def getProjectReferences(self, chunk_size=4):
         brains = self.catalog(portal_type='zopyx.policy.projectreference',
                               path='/'.join(self.navroot.getPhysicalPath()))
-        result = list()
-        for i in range(0, chunk_size):
-            result.append([])
+        result = [[] for _ in range(chunk_size)]
         for i, brain in enumerate(brains):
             result[i % chunk_size].append(brain.getObject())
         return result
@@ -87,30 +87,26 @@ class Navigation(BrowserView):
     def getProjectReferencesUnchunked(self):
         brains = self.catalog(portal_type='zopyx.policy.projectreference',
                               path='/'.join(self.navroot.getPhysicalPath()))
-        refs = list()
-        for brain in brains:
-            refs.append(brain.getObject())
+        refs = [brain.getObject() for brain in brains]
         random.shuffle(refs)
         return refs
     
     def getRotatorImages(self, chunk_size=4):
         brains = self.catalog(portal_type='zopyx.policy.rotatorimage',
                               path='/'.join(self.navroot.getPhysicalPath()))
-        images = list()
-        for brain in brains:
-            images.append(brain.getObject())
-        return images
+        return [brain.getObject() for brain in brains]
 
     def isNavigationRoot(self):
-        if '/search' in self.request.URL:
-            return False
-        return self.context == self.navroot
+        return False if '/search' in self.request.URL else self.context == self.navroot
 
 
     def getRandomTestimonial(self):
-        brains = self.catalog({'portal_type' : 'zopyx.policy.customertestimonial',
-                               'path' : '/'.join(self.navroot.getPhysicalPath())})
-        if brains:
+        if brains := self.catalog(
+            {
+                'portal_type': 'zopyx.policy.customertestimonial',
+                'path': '/'.join(self.navroot.getPhysicalPath()),
+            }
+        ):
             brain = random.choice(brains)
             return brain.getObject()
         return None
@@ -122,8 +118,7 @@ class Navigation(BrowserView):
     def getBreadcrumbs(self):
         breadcrumbs_view = getMultiAdapter((self.context, self.request),
                                            name='breadcrumbs_view')
-        result = breadcrumbs_view.breadcrumbs()
-        return result
+        return breadcrumbs_view.breadcrumbs()
 
     def getNavigationRoot(self):
         return self.navroot
@@ -135,9 +130,13 @@ class Navigation(BrowserView):
         return 'span8'
 
     def sideSlotVisible(self):
-        return not self.context.portal_type in (
-                'Folder', 'zopyx.policy.projectreference', 
-                                                'zopyx.policy.person', 'zopyx.policy.youtube', 'zopyx.policy.slideshare')
+        return self.context.portal_type not in (
+            'Folder',
+            'zopyx.policy.projectreference',
+            'zopyx.policy.person',
+            'zopyx.policy.youtube',
+            'zopyx.policy.slideshare',
+        )
 
 
     def breadcrumbs(self):
